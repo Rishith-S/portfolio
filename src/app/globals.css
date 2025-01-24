@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -44,7 +44,7 @@ body {
 }
 
 #githubLogo:hover, #linkedinLogo:hover, #twitterLogo:hover {
-  box-shadow: 0 0px 5px, 0 0 10px, 0 0 1em #73b9ff, 0 0 1em #ffc8e1, 0 0 0.1em #ffc8e1;
+  box-shadow: 0 0px 5px, 0 0 10px, 0 0 1em #e1f8dc, 0 0 1em #e1f8dc, 0 0 0.1em #e1f8dc;
   opacity: 1;
 }
 
@@ -63,7 +63,7 @@ body {
 }
 .experience-card:hover .arrow-icon {
   transform: translateX(5px) translateY(-5px) scale(1);
-  fill: #64ffda
+  fill: #95ffe6
 }
 
 .experience-card:hover .text-hover {

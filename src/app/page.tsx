@@ -47,7 +47,7 @@ export default function Home() {
   }, []);
   return (
     <div className="bg-black w-screen">
-      <div className="lg:overflow-y-scroll px-8 py-24 flex flex-col md:h-screen lg:gap-8 lg:items-start lg:justify-between lg:pl-28 lg:fixed lg:w-[40%]">
+      <div className="px-8 py-12 md:px-16 md:py-24 lg:px-0 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:pl-28 lg:fixed lg:w-[40%]">
         <div className="flex flex-col">
           <div className="flex flex-col">
             <p id="name" className="text-4xl md:text-[3.5rem] font-bold ">
@@ -78,7 +78,7 @@ export default function Home() {
             <DesktopTab title="PROJECTS" value={2} currentValue={0} />
           </div>
         </div>
-        <div className="flex-row flex gap-8 mt-8 lg:mt-0 cursor-pointer" onClick={()=>{window.open('https://github.com/Rishith-S', "mywindow");}}>
+        <div className="flex-row flex gap-8 mt-8 lg:mt-12 cursor-pointer" onClick={()=>{window.open('https://github.com/Rishith-S', "mywindow");}}>
           <div id="githubLogo" className="w-7 h-7 rounded-full">
             <IconGitHub />
           </div>
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="px-8 gap-4 md:py-24 flex h-screen flex-col md:col-span-3 lg:gap-8 lg:items-start lg:pr-28 lg:ml-[40%]">
+      <div className="overflow-y-scroll h-[100%] px-8 gap-4 md:px-16 lg:py-24 flex flex-col md:col-span-3 lg:gap-8 lg:items-start lg:pr-28 lg:ml-[40%]">
         <div id="about" className="w-full"><About /></div>
         <div id="skills" className="w-full"><Skills /></div>
         <div id="experience" className="w-full"><Experience /></div>

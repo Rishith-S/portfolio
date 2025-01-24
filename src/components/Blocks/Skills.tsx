@@ -27,7 +27,7 @@ export default function Skills() {
         <IndividualSkill title={'React'} SvgIcon={ReactIcon} />
         <IndividualSkill title={'Next JS'} SvgIcon={NextIcon} />
         <IndividualSkill title={'React Native'} SvgIcon={ReactIcon} />
-        <IndividualSkill title={'Flutter'} SvgIcon={FlutterIcon} />
+        {/* <IndividualSkill title={'Flutter'} SvgIcon={FlutterIcon} /> */}
         <IndividualSkill title={'Tailwind CSS'} SvgIcon={TailwindIcon} />
         <IndividualSkill title={'Redux'} SvgIcon={ReduxIcon} />
         <IndividualSkill title={'NodeJs'} SvgIcon={NodejsIcon} />
