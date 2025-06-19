@@ -47,7 +47,7 @@ export default function Home() {
   }, []);
   return (
     <div className="bg-black w-screen">
-      <div className="px-8 py-12 md:px-16 md:py-24 lg:px-0 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:pl-28 lg:fixed lg:w-[40%]">
+      <div className="px-8 py-12 md:px-16 md:py-24 lg:px-16 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:fixed lg:w-[40%]">
         <div className="flex flex-col">
           <div className="flex flex-col">
             <p id="name" className="text-4xl md:text-[3.5rem] font-bold ">
@@ -119,8 +119,8 @@ function DesktopTab({
   const [onHover,setOnHover] = useState(-1)
   return (
     <div onClick={()=>window.location.href=`#${title.toLowerCase()}`} className="py-4 flex flex-row items-center gap-2 w-48 cursor-pointer" onMouseEnter={()=>setOnHover(value)} onMouseLeave={()=>setOnHover(-1)}>
-      <div className={`${currentValue===value || value===onHover ? 'w-16 bg-white' : 'w-8 bg-[#c7c7c7]'} h-[2px] transition-all duration-300`} />
-      <p className={`${currentValue===value || value===onHover ? 'text-white ' : 'text-[#c7c7c7]'} font-extrabold transition-all duration-300`}>{title}</p>
+      <div className={`${currentValue===value || value===onHover ? 'w-16 bg-teal-200' : 'w-8 bg-[#c7c7c7]'} h-[2px] transition-all duration-300`} />
+      <p className={`${currentValue===value || value===onHover ? 'text-teal-200 ' : 'text-[#c7c7c7]'} font-extrabold transition-all duration-300`}>{title}</p>
     </div>
   );
 }

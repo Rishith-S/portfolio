@@ -8,7 +8,7 @@ const experiences = [
   {
     name: "EKSAQ",
     role: "Associate Software Developer",
-    duration: "Jun 2024 - Jan 2024",
+    duration: "Jun 2024 - Jan 2025",
     companyWebsite: "https://eksaq.in",
     description: [
       "Developed a Reading Comprehension Assessment App using <b>React Native</b>, achieving cross-platform functionality for mobile and web with over <b>10,000 active users</b>.",

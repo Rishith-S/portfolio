@@ -8,7 +8,7 @@ const IconGitHub = () => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     x="0px"
     y="0px"
-    viewBox="0 0 96 96"
+    viewBox="0 2 97 96"
     width="100%"
     height="100%"
     xmlSpace="preserve"

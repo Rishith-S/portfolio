@@ -46,7 +46,7 @@ export default function Skills() {
 
 function IndividualSkill({title,SvgIcon}:{title: string, SvgIcon: ()=>React.JSX.Element}) {
   return (
-    <div className="w-[47%] flex flex-row items-center md:justify-center gap-2 px-4 py-3 bg-slate-800 rounded-lg backdrop-blur-md md:w-auto">
+    <div className="w-[47%] flex flex-row items-center md:justify-center gap-2 px-4 py-3 hover:bg-teal-800/75 bg-slate-800 rounded-lg backdrop-blur-md md:w-auto">
       <div className="w-7 h-7">
         <SvgIcon />
       </div>

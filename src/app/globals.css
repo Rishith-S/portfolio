@@ -44,7 +44,7 @@ body {
 }
 
 #githubLogo:hover, #linkedinLogo:hover, #twitterLogo:hover {
-  box-shadow: 0 0px 5px, 0 0 10px, 0 0 1em #e1f8dc, 0 0 1em #e1f8dc, 0 0 0.1em #e1f8dc;
+  box-shadow: 0 0px 10px, 0 0 10px, 0 0 1em #e1f8dc, 0 0 1em #e1f8dc, 0 0 0.1em #e1f8dc;
   opacity: 1;
 }
 
