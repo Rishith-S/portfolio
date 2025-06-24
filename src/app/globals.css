@@ -37,6 +37,21 @@ body {
   word-spacing: 5px;
 }
 
+.sideHighlight {
+  letter-spacing: 1.5px;
+  color: #ffffe3;
+  text-shadow: 0 0px 0.3px, 0 0 0.02px, 0 0 0.001em #ff9d00, 0 0 0.05em #ff9d00, 0 0 0.001em #ff9d00, 0 0.1px 0.3px #000;
+  word-spacing: 5px;
+}
+
+
+.Experience {
+  letter-spacing: 1.5px;
+  color: #ffffe3;
+  text-shadow: 0 0px 3px, 0 0 0.2px, 0 0 0.01em #fffa00, 0 0 0.5em #fffa00, 0 0 0.01em #fffa00, 0 1px 3px #000;
+  word-spacing: 5px;
+}
+
 #Skills {
   color: #c5fffe;
   text-shadow:  0 0px 3px, 0 0 0.2px, 0 0 0.01em #4DEEEA, 0 0 0.5em #4DEEEA, 0 0 0.01em #4DEEEA, 0 1px 3px #000;
