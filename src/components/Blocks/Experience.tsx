@@ -64,7 +64,7 @@ const HighlightedText = (text: string) => {
 export default function Experience() {
   return (
     <div>
-      <p id="Experience" className="text-2xl">
+      <p id="Experience" className="text-2xl mb-2">
         Experience
       </p>
       {experiences.map((individualExperience, index) => (
@@ -94,7 +94,7 @@ function ExperienceCard({
   return (
     <div
       id="ExperienceCard"
-      className="mt-2 rounded-3xl experience-card cursor-pointer lg:p-4"
+      className="rounded-3xl experience-card cursor-pointer lg:p-4"
     >
       <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-[100%]">
         <div className="flex flex-row items-start justify-start md:items-center md:justify-center gap-4">

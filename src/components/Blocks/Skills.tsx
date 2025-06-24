@@ -13,15 +13,14 @@ import mongoDBIcon from "../icons/mongoDBIcon";
 import PostgressIcon from "../icons/postgressIcon";
 import gitIcon from "../icons/gitIcon";
 import AwsIcon from "../icons/awsIcon";
-import FlutterIcon from "../icons/flutterIcon";
 import PrismaIcon from "../icons/prismaIcon";
 export default function Skills() {
   return (
     <div>
-      <p className="text-2xl" id="Skills">
+      <p className="text-2xl mb-2" id="Skills">
         Skills
       </p>
-      <div className="flex flex-row flex-wrap gap-4 mt-2">
+      <div className="flex flex-row flex-wrap gap-4">
         <IndividualSkill title={'Javascript'} SvgIcon={JSIcon} />
         <IndividualSkill title={'Typescript'} SvgIcon={TSIcon} />
         <IndividualSkill title={'React'} SvgIcon={ReactIcon} />

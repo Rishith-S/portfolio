@@ -9,18 +9,13 @@ import IconTwitter from "@/components/icons/twitter";
 import { useState, useRef, useEffect } from "react";
 
 export default function Home() {
-  const texts = ["Full-Stack Developer", "React Native Developer"];
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const spanRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     let animationTimeout: ReturnType<typeof setTimeout>;
     const handleAnimationIteration = () => {
       animationTimeout = setTimeout(() => {
-        setCurrentTextIndex((prev) => {
-          return (prev + 1) % texts.length;
-        });
-      }, 4600);
+      }, 5000);
     };
 
     const spanElement = spanRef.current;
@@ -30,10 +25,6 @@ export default function Home() {
         handleAnimationIteration
       );
     }
-
-    setTimeout(() => {
-      setCurrentTextIndex(1);
-    }, 3400);
 
     return () => {
       if (spanElement) {
@@ -50,26 +41,25 @@ export default function Home() {
       <div className="px-8 py-12 md:px-16 md:py-24 lg:px-16 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:fixed lg:w-[40%]">
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <p className="text-4xl md:text-[3.5rem] font-bold text-teal-100">
-              Rishith Saginala
+            <p className="text-4xl md:text-[3rem] font-bold heading-primary" id="blinkText">
+              <span
+                id="textDisplay"
+                ref={spanRef}
+              >
+                Rishith Saginala
+              </span>
             </p>
-            <div className="mt-3" id="blinkText">
-              <p>
-                <span
-                  id="textDisplay"
-                  className="text-2xl md:text-3xl font-semibold"
-                  ref={spanRef}
-                >
-                  {texts[currentTextIndex]}
-                </span>
+            <div className="mt-4">
+              <p className="text-2xl md:text-3xl font-semibold heading-secondary orbitron">
+                Full-Stack Developer
               </p>
             </div>
           </div>
           <div className="mt-4">
-            <p className="text-neutral-300 text-lg md:text-xl">
+            <p className="text-neutral-300 text-lg md:text-xl text-modern">
               I develop Machine learning, Deep learning models,
               Web applications
-              and Cross Platform Applications           
+              and Cross Platform Applications
             </p>
           </div>
           <div className="hidden lg:flex lg:flex-col lg:mt-[15%]">
@@ -78,14 +68,14 @@ export default function Home() {
             <DesktopTab title="PROJECTS" value={2} currentValue={0} />
           </div>
         </div>
-        <div className="flex-row flex gap-8 mt-8 lg:mt-12 cursor-pointer" onClick={()=>{window.open('https://github.com/Rishith-S', "mywindow");}}>
+        <div className="flex-row flex gap-8 mt-8 lg:mt-12 cursor-pointer" onClick={() => { window.open('https://github.com/Rishith-S', "mywindow"); }}>
           <div id="githubLogo" className="w-7 h-7 rounded-full">
             <IconGitHub />
           </div>
           <div
             id="linkedinLogo"
             className="w-7 h-7 rounded-md flex items-center justify-center cursor-pointer"
-            onClick={()=>{window.open('https://github.com/Rishith-S', "mywindow");}}
+            onClick={() => { window.open('https://github.com/Rishith-S', "mywindow"); }}
           >
             <IconLinkedin />
           </div>
@@ -116,11 +106,11 @@ function DesktopTab({
   value: number;
   currentValue: number;
 }) {
-  const [onHover,setOnHover] = useState(-1)
+  const [onHover, setOnHover] = useState(-1)
   return (
-    <div onClick={()=>window.location.href=`#${title.toLowerCase()}`} className="py-4 flex flex-row items-center gap-2 w-48 cursor-pointer" onMouseEnter={()=>setOnHover(value)} onMouseLeave={()=>setOnHover(-1)}>
-      <div className={`${currentValue===value || value===onHover ? 'w-16 bg-yellow-100' : 'w-8 bg-[#c7c7c7]'} h-[2px] transition-all duration-300`} />
-      <p className={`${currentValue===value || value===onHover ? 'sideHighlight text-yellow-200 ' : 'text-[#c7c7c7]'} font-extrabold transition-all duration-300`}>{title}</p>
+    <div onClick={() => window.location.href = `#${title.toLowerCase()}`} className="py-4 flex flex-row items-center gap-2 w-48 cursor-pointer" onMouseEnter={() => setOnHover(value)} onMouseLeave={() => setOnHover(-1)}>
+      <div className={`${currentValue === value || value === onHover ? 'w-16 bg-yellow-100' : 'w-8 bg-[#c7c7c7]'} h-[2px] transition-all duration-300`} />
+      <p className={`${currentValue === value || value === onHover ? 'sideHighlight text-yellow-200 ' : 'text-[#c7c7c7]'} font-extrabold text-lg transition-all duration-300 heading-secondary orbitron`}>{title}</p>
     </div>
   );
 }
