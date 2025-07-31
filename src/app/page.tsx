@@ -91,8 +91,8 @@ export default function Home() {
             <DesktopTab title="PROJECTS" value={3} currentValue={currentSection} />
           </div>
         </div>
-        <div className="flex-row flex gap-8 mt-8 lg:mt-12 cursor-pointer" onClick={() => { window.open('https://github.com/Rishith-S', "mywindow"); }}>
-          <div id="githubLogo" className="w-7 h-7 rounded-full">
+        <div className="flex-row flex gap-8 mt-8 lg:mt-12 cursor-pointer" >
+          <div id="githubLogo" className="w-7 h-7 rounded-full"onClick={() => { window.open('https://github.com/Rishith-S', "mywindow"); }}>
             <IconGitHub />
           </div>
           <div
