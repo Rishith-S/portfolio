@@ -1,15 +1,17 @@
 "use client";
 import About from "@/components/Blocks/About";
 import Experience from "@/components/Blocks/Experience";
-import Projects from "@/components/Blocks/Projetcs";
+import Projects from "@/components/Blocks/Projects";
 import Skills from "@/components/Blocks/Skills";
 import IconGitHub from "@/components/icons/github";
 import IconLinkedin from "@/components/icons/linkedin";
 import IconTwitter from "@/components/icons/twitter";
+import ArrowIcon from "@/components/icons/arrowIcon";
 import { useState, useRef, useEffect } from "react";
 
 export default function Home() {
   const spanRef = useRef<HTMLSpanElement>(null);
+  const [currentSection, setCurrentSection] = useState(0);
 
   useEffect(() => {
     let animationTimeout: ReturnType<typeof setTimeout>;
@@ -36,12 +38,29 @@ export default function Home() {
       clearTimeout(animationTimeout);
     };
   }, []);
+
+  useEffect(() => {
+          const handleScroll = () => {
+        const sections = ['about', 'skills', 'experience', 'projects'];
+        const scrollPosition = window.scrollY + window.innerHeight * 0.5;
+
+        for (let i = 0; i < sections.length; i++) {
+          const element = document.getElementById(sections[i]);
+          if (element && element.offsetTop <= scrollPosition) {
+            setCurrentSection(i);
+          }
+        }
+      };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <div className="bg-black w-screen">
-      <div className="px-8 py-12 md:px-16 md:py-24 lg:px-16 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:fixed lg:w-[40%]">
+      <div className="px-8 py-8 md:px-16 xl:py-24 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:fixed lg:w-[40%]">
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <p className="text-4xl md:text-[3rem] font-bold heading-primary" id="blinkText">
+            <p className="text-4xl xl:text-[3rem] font-bold heading-primary" id="blinkText">
               <span
                 id="textDisplay"
                 ref={spanRef}
@@ -58,14 +77,18 @@ export default function Home() {
           <div className="mt-4">
             <p className="text-neutral-300 text-lg md:text-xl text-modern">
               I develop Machine learning, Deep learning models,
-              Web applications
+              Web
               and Cross Platform Applications
             </p>
           </div>
-          <div className="hidden lg:flex lg:flex-col lg:mt-[15%]">
-            <DesktopTab title="SKILLS" value={0} currentValue={0} />
-            <DesktopTab title="EXPERIENCE" value={1} currentValue={0} />
-            <DesktopTab title="PROJECTS" value={2} currentValue={0} />
+          <div className="mt-4 flex flex-row items-center cursor-pointer view-full-project-archive" onClick={() => { window.open('https://drive.google.com/file/d/1TGGL2ZROEepOLxj2f0mZstQJOz2U-Thb/view?usp=sharing', "mywindow"); }}>
+            <p className="text-neutral-300 text-md md:text-xl text-modern">View Resume</p>
+            <div className="skill-icon2"><ArrowIcon /></div>
+          </div>
+          <div className="hidden lg:flex lg:flex-col lg:mt-4 xl:mt-[15%]">
+            <DesktopTab title="SKILLS" value={1} currentValue={currentSection} />
+            <DesktopTab title="EXPERIENCE" value={2} currentValue={currentSection} />
+            <DesktopTab title="PROJECTS" value={3} currentValue={currentSection} />
           </div>
         </div>
         <div className="flex-row flex gap-8 mt-8 lg:mt-12 cursor-pointer" onClick={() => { window.open('https://github.com/Rishith-S', "mywindow"); }}>
@@ -108,7 +131,7 @@ function DesktopTab({
 }) {
   const [onHover, setOnHover] = useState(-1)
   return (
-    <div onClick={() => window.location.href = `#${title.toLowerCase()}`} className="py-4 flex flex-row items-center gap-2 w-48 cursor-pointer" onMouseEnter={() => setOnHover(value)} onMouseLeave={() => setOnHover(-1)}>
+    <div onClick={() => window.location.href = `#${title.toLowerCase()}`} className="py-4 flex flex-row items-center gap-2 w-64 cursor-pointer" onMouseEnter={() => setOnHover(value)} onMouseLeave={() => setOnHover(-1)}>
       <div className={`${currentValue === value || value === onHover ? 'w-16 bg-yellow-100' : 'w-8 bg-[#c7c7c7]'} h-[2px] transition-all duration-300`} />
       <p className={`${currentValue === value || value === onHover ? 'sideHighlight text-yellow-200 ' : 'text-[#c7c7c7]'} font-extrabold text-lg transition-all duration-300 heading-secondary orbitron`}>{title}</p>
     </div>

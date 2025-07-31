@@ -35,6 +35,16 @@ body {
   background-color: #001c31;
 }
 
+#ProjectCard:hover {
+  background-color: #001c31;
+}
+
+.view-full-project-archive:hover p{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-color: #64ffda;
+}
+
 .sideHighlight {
   letter-spacing: 1.5px;
   color: #ffffe3;
@@ -43,13 +53,45 @@ body {
 }
 
 
-#Overview, #Experience, #Skills {
+#Overview, #Experience, #Skills, #Projects {
   font-family: 'Orbitron', Arial, sans-serif;
   font-weight: 700;
   font-size: 1.75rem;
-  color: #a3e8ab;
+  color: #e6d7fa;
   letter-spacing: 0.01em;
 
+}
+
+.skills-card:hover {
+  box-shadow: 0 0px 5px, 0 0 5px, 0 0 1em #ffffe3, 0 0 1em #ffffe3 , 0 0 0.1em #ffffe3;
+  opacity: 1;
+  border: 1px solid #ffffe3;
+}
+
+.view-full-project-archive:hover .skill-icon svg {
+  transform: translateX(5px) translateY(-5px) scale(1);
+  fill: #64ffda;
+  transition: transform 0.3s ease;
+}
+
+.view-full-project-archive:hover .skill-icon2 svg {
+  transform: translateX(3px) translateY(-3px) scale(1);
+  fill: #64ffda;
+  transition: transform 0.3s ease;
+}
+
+.backtoHomePage:hover .arrow-icon{
+  transform: translateX(10px) translateY(2px) scale(1);
+  fill: #64ffda;
+  transition: transform 0.3s ease;
+}
+
+.backtoHomePage .arrow-icon{
+  rotate: 113deg;
+}
+
+.view-full-project-archive .skill-icon {
+  rotate: 44.5deg;
 }
 
 #githubLogo:hover, #linkedinLogo:hover, #twitterLogo:hover {
@@ -72,7 +114,7 @@ body {
 }
 .experience-card:hover .arrow-icon {
   transform: translateX(5px) translateY(-5px) scale(1);
-  fill: #95ffe6
+  fill: #95ffe6;
 }
 
 .experience-card:hover .text-hover {
