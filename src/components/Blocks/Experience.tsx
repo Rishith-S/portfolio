@@ -1,4 +1,3 @@
-import React from "react";
 import Image, { StaticImageData } from "next/image";
 import EksaqLogo from "../../assets/eksaqLogo.png";
 import JediteckLogo from "../../assets/jediteckLogo.png";

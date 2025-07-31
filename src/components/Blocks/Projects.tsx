@@ -1,13 +1,13 @@
 "use client"
 
 import Image, { StaticImageData } from "next/image";
-import VideoTranscoder from "../../assets/videoTranscoder.png";
 import Clipcraft from "../../assets/clipcraft.png";
 import Packcheck from "../../assets/packcheck.png";
+import Starbucks from "../../assets/starbucks.png";
+import VideoTranscoder from "../../assets/videoTranscoder.png";
 import YoutubenotesX from "../../assets/youtubenotesx.png";
 import ArrowIcon from "../icons/arrowIcon";
 import WebsiteLink from "../icons/websiteLink";
-import Starbucks from "../../assets/starbucks.png";
 export const projects: ProjectProps[] = [
   {
     name: "PackCheck",

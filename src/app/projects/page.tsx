@@ -1,10 +1,9 @@
 "use client"
 
-import React from 'react'
-import { projects, ProjectProps, HighlightedText } from '@/components/Blocks/Projects';
-import Image from 'next/image';
-import WebsiteLink from '@/components/icons/websiteLink';
+import { ProjectProps, projects } from '@/components/Blocks/Projects';
 import ArrowIcon from '@/components/icons/arrowIcon';
+import WebsiteLink from '@/components/icons/websiteLink';
+import Image from 'next/image';
 
 export default function Projects() {
   return (

@@ -3,11 +3,11 @@ import About from "@/components/Blocks/About";
 import Experience from "@/components/Blocks/Experience";
 import Projects from "@/components/Blocks/Projects";
 import Skills from "@/components/Blocks/Skills";
+import ArrowIcon from "@/components/icons/arrowIcon";
 import IconGitHub from "@/components/icons/github";
 import IconLinkedin from "@/components/icons/linkedin";
 import IconTwitter from "@/components/icons/twitter";
-import ArrowIcon from "@/components/icons/arrowIcon";
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const spanRef = useRef<HTMLSpanElement>(null);
@@ -82,7 +82,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-4 flex flex-row items-center cursor-pointer view-full-project-archive" onClick={() => { window.open('https://drive.google.com/file/d/1TGGL2ZROEepOLxj2f0mZstQJOz2U-Thb/view?usp=sharing', "mywindow"); }}>
-            <p className="text-neutral-300 text-md md:text-xl text-modern">View Resume</p>
+            <p className="text-neutral-300 text-lg md:text-xl text-modern">View Resume</p>
             <div className="skill-icon2"><ArrowIcon /></div>
           </div>
           <div className="hidden lg:flex lg:flex-col lg:mt-4 xl:mt-[15%]">
