@@ -57,7 +57,7 @@ export default function Home() {
   }, []);
   return (
     <div className="bg-black w-screen">
-      <div className="px-8 py-8 md:px-16 xl:py-24 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:fixed lg:w-[40%]">
+      <div className="px-8 py-8 xl:px-16 xl:pb-24 xl:pt-16 flex flex-col lg:gap-8 lg:items-start lg:justify-between lg:fixed lg:w-[40%]">
         <div className="flex flex-col">
           <div className="flex flex-col">
             <p className="text-4xl xl:text-[3rem] font-bold heading-primary" id="blinkText">
@@ -85,7 +85,7 @@ export default function Home() {
             <p className="text-neutral-300 text-lg md:text-xl text-modern">View Resume</p>
             <div className="skill-icon2"><ArrowIcon /></div>
           </div>
-          <div className="hidden lg:flex lg:flex-col lg:mt-4 xl:mt-[15%]">
+          <div className="hidden lg:flex lg:flex-col xl:mt-[10%]">
             <DesktopTab title="SKILLS" value={1} currentValue={currentSection} />
             <DesktopTab title="EXPERIENCE" value={2} currentValue={currentSection} />
             <DesktopTab title="PROJECTS" value={3} currentValue={currentSection} />
@@ -98,19 +98,20 @@ export default function Home() {
           <div
             id="linkedinLogo"
             className="w-7 h-7 rounded-md flex items-center justify-center cursor-pointer"
-            onClick={() => { window.open('https://github.com/Rishith-S', "mywindow"); }}
+            onClick={() => { window.open('https://www.linkedin.com/in/rishith-s/', "mywindow"); }}
           >
             <IconLinkedin />
           </div>
           <div
             id="twitterLogo"
             className="w-7 h-7 rounded-md flex items-center justify-center cursor-pointer"
+            onClick={() => { window.open('https://www.linkedin.com/in/rishith-s/', "mywindow"); }}
           >
             <IconTwitter />
           </div>
         </div>
       </div>
-      <div className="overflow-y-scroll h-[100%] px-8 gap-4 md:px-16 lg:py-24 flex flex-col md:col-span-3 lg:gap-8 lg:items-start lg:pr-28 lg:ml-[40%]">
+      <div className="overflow-y-scroll h-[100%] px-8 gap-4 xl:px-16 xl:pb-24 xl:pt-16 flex flex-col md:col-span-3 lg:gap-8 lg:items-start lg:pr-28 lg:ml-[40%]">
         <div id="about" className="w-full"><About /></div>
         <div id="skills" className="w-full"><Skills /></div>
         <div id="experience" className="w-full"><Experience /></div>

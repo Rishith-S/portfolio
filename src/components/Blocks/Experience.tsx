@@ -140,7 +140,7 @@ function ExperienceCard({
   return (
     <div
       id="ExperienceCard"
-      className="rounded-3xl border-2 hover:border-0 border-gray-800 experience-card cursor-pointer lg:p-4 hover:p-4"
+      className="rounded-3xl lg:border-2 hover:border-0 border-gray-800 experience-card cursor-pointer lg:p-4 hover:p-4"
       onClick={() => window.open(data.companyWebsite, "mywindow")}
     >
       <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-[100%]">

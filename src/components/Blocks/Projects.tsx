@@ -191,7 +191,7 @@ function ProjectCard({
   return (
     <div
       id="ProjectCard"
-      className="rounded-3xl border-2 hover:border-0 border-gray-800 experience-card cursor-pointer lg:p-4 hover:p-4"
+      className="rounded-3xl lg:border-2 hover:border-0 border-gray-800 experience-card cursor-pointer lg:p-4 hover:p-4"
     >
       <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-[100%]">
         <div className="flex flex-row items-start justify-start md:items-center md:justify-center gap-4">
