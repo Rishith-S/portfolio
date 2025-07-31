@@ -105,7 +105,7 @@ export default function Home() {
           <div
             id="twitterLogo"
             className="w-7 h-7 rounded-md flex items-center justify-center cursor-pointer"
-            onClick={() => { window.open('https://www.linkedin.com/in/rishith-s/', "mywindow"); }}
+            onClick={() => { window.open('https://x.com/Rishi_83s/', "mywindow"); }}
           >
             <IconTwitter />
           </div>
