@@ -118,6 +118,10 @@ export const projects: ProjectProps[] = [
     ],
     deployedLinks: [
       {
+        title: "Website",
+        link: "https://starbucks-m8ec.onrender.com/",
+      },
+      {
         title: "GitHub",
         link: "https://github.com/Rishith-S/starbucks",
       },
@@ -152,7 +156,7 @@ export default function Projects() {
         Projects
       </p>
       <div className="flex flex-col items-center justify-center gap-4">
-        {projects.slice(0, 3).map((project, index) => (
+        {projects.slice(0, 5).map((project, index) => (
           <div key={`index-${index}`} className="flex flex-col items-center justify-center"  >
             <ProjectCard
               key={index}

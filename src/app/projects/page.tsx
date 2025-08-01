@@ -12,12 +12,10 @@ export default function Projects() {
         <div className='arrow-icon'><ArrowIcon /></div>
         <p className='text-lg font-bold text-hover'>Rishith Saginala</p>
       </div>
-      <div className="flex flex-row gap-4 w-full h-full items-center justify-center">
-        <div className="flex flex-col lg:flex-row flex-wrap w-full h-full px-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full p-4">
           {projects.map((project, index) => (
             <ProjectCard key={index} data={project} />
           ))}
-        </div>
       </div>
     </div>
   )
@@ -29,7 +27,7 @@ function ProjectCard({
   return (
     <div
       id="ProjectCard"
-      className="rounded-3xl experience-card cursor-pointer border-2 border-gray-800 w-full lg:w-[24%] m-2"
+      className="rounded-3xl experience-card cursor-pointer border-2 border-gray-800 w-full"
     >
       <Image
         src={data.image}
