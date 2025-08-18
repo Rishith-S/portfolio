@@ -82,7 +82,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-4 flex flex-row items-center cursor-pointer view-full-project-archive" onClick={() => { window.open('https://drive.google.com/file/d/1TGGL2ZROEepOLxj2f0mZstQJOz2U-Thb/view?usp=sharing', "mywindow"); }}>
-            <p className="text-neutral-300 text-lg font-bold text-[#64ffda]">View Resume</p>
+            <p className="text-lg font-bold text-[#64ffda]">View Resume</p>
             <div className="skill-icon2"><ArrowIcon /></div>
           </div>
           <div className="hidden lg:flex lg:flex-col xl:mt-[10%]">
