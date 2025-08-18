@@ -1,5 +1,4 @@
 "use client";
-import About from "@/components/Blocks/About";
 import Experience from "@/components/Blocks/Experience";
 import Projects from "@/components/Blocks/Projects";
 import Skills from "@/components/Blocks/Skills";
@@ -112,7 +111,6 @@ export default function Home() {
         </div>
       </div>
       <div className="overflow-y-scroll h-[100%] px-8 gap-4 xl:px-16 xl:pb-24 xl:pt-16 flex flex-col md:col-span-3 lg:gap-8 lg:items-start lg:pr-28 lg:ml-[40%]">
-        <div id="about" className="w-full"><About /></div>
         <div id="skills" className="w-full"><Skills /></div>
         <div id="experience" className="w-full"><Experience /></div>
         <div id="projects" className="w-full"><Projects /></div>
