@@ -63,9 +63,9 @@ body {
 }
 
 .skills-card:hover {
-  box-shadow: 0 0px 5px, 0 0 5px, 0 0 1em #ffffe3, 0 0 1em #ffffe3 , 0 0 0.1em #ffffe3;
-  opacity: 1;
-  border: 1px solid #ffffe3;
+  /* box-shadow: 0 0px 5px, 0 0 5px, 0 0 1em #ffffe3, 0 0 1em #ffffe3 , 0 0 0.1em #ffffe3; */
+  /* opacity: 1; */
+  border: 1px solid #626262;
 }
 
 .view-full-project-archive:hover .skill-icon svg {
@@ -105,7 +105,7 @@ body {
 }
 
 #textDisplay {
-  animation:  oldLightBlink 5s ease-in-out infinite;
+  animation:  oldLightBlink 8s ease-in-out infinite;
 }
 
 .arrow-icon {

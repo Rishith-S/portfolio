@@ -92,13 +92,13 @@ const HighlightedText = (text: string) => {
   const formattedText = text.split(/(<b>.*?<\/b>)/).map((part, index) => {
     if (part.startsWith("<b>") && part.endsWith("</b>")) {
       return (
-        <span key={index} className="font-bold text-lg text-white md:text-xl">
+        <span key={index} className="font-bold text-[16px] text-white">
           {part.replace("<b>", "").replace("</b>", "")}
         </span>
       );
     }
     return (
-      <span key={index} className="md:text-lg text-white">
+      <span key={index} className="text-[16px] text-white">
         {part}
       </span>
     );
@@ -166,7 +166,7 @@ function ExperienceCard({
       <div>
         <ul className={"list-disc list-inside mt-2"}>
           {data.description.map((point, index) => (
-            <li key={index} className="text-lg">
+            <li key={index} className="text-md">
               {HighlightedText(point)}
             </li>
           ))}

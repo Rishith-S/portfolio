@@ -1,4 +1,5 @@
 "use client";
+import About from "@/components/Blocks/About";
 import Experience from "@/components/Blocks/Experience";
 import Projects from "@/components/Blocks/Projects";
 import Skills from "@/components/Blocks/Skills";
@@ -74,14 +75,14 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-4">
-            <p className="text-neutral-300 text-lg md:text-xl text-modern">
+            <p className="text-neutral-300 text-[18px] text-modern">
               I develop Machine learning, Deep learning models,
               Web
               and Cross Platform Applications
             </p>
           </div>
           <div className="mt-4 flex flex-row items-center cursor-pointer view-full-project-archive" onClick={() => { window.open('https://drive.google.com/file/d/1TGGL2ZROEepOLxj2f0mZstQJOz2U-Thb/view?usp=sharing', "mywindow"); }}>
-            <p className="text-neutral-300 text-lg md:text-xl text-modern">View Resume</p>
+            <p className="text-neutral-300 text-lg font-bold text-[#64ffda]">View Resume</p>
             <div className="skill-icon2"><ArrowIcon /></div>
           </div>
           <div className="hidden lg:flex lg:flex-col xl:mt-[10%]">
@@ -111,6 +112,7 @@ export default function Home() {
         </div>
       </div>
       <div className="overflow-y-scroll h-[100%] px-8 gap-4 xl:px-16 xl:pb-24 xl:pt-16 flex flex-col md:col-span-3 lg:gap-8 lg:items-start lg:pr-28 lg:ml-[40%]">
+        <div id="about" className="w-full"><About /></div>
         <div id="skills" className="w-full"><Skills /></div>
         <div id="experience" className="w-full"><Experience /></div>
         <div id="projects" className="w-full"><Projects /></div>

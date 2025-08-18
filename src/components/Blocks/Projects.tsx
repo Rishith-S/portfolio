@@ -134,13 +134,13 @@ export const HighlightedText = (text: string) => {
   const formattedText = text.split(/(<b>.*?<\/b>)/).map((part, index) => {
     if (part.startsWith("<b>") && part.endsWith("</b>")) {
       return (
-        <span key={index} className="font-bold text-md text-white 2xl:text-xl">
+        <span key={index} className="font-bold text-[16px] text-white 2xl:text-[16px]">
           {part.replace("<b>", "").replace("</b>", "")}
         </span>
       );
     }
     return (
-      <span key={index} className="text-md w-full text-white">
+      <span key={index} className="text-[16px] w-full text-white">
         {part}
       </span>
     );
