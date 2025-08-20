@@ -32,7 +32,7 @@ export const projects: ProjectProps[] = [
       },
       {
         title: "GitHub",
-        link: "https://github.com/Rishith-S/video-transcoder",
+        link: "https://github.com/Rishith-S/packcheck",
       },
     ],
     image: Packcheck,
@@ -56,7 +56,7 @@ export const projects: ProjectProps[] = [
     deployedLinks: [
       {
         title: "GitHub",
-        link: "https://github.com/Rishith-S/video-transcoder",
+        link: "https://github.com/Rishith-S/clipcraft",
       },
     ],
     image: Clipcraft,
@@ -105,7 +105,7 @@ export const projects: ProjectProps[] = [
       },
       {
         title: "GitHub",
-        link: "https://github.com/Rishith-S/video-transcoder",
+        link: "https://github.com/Rishith-S/youtubenotesapp",
       },
     ],
     image: YoutubenotesX,
