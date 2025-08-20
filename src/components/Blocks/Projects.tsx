@@ -6,13 +6,14 @@ import Packcheck from "../../assets/packcheck.png";
 import Starbucks from "../../assets/starbucks.png";
 import VideoTranscoder from "../../assets/videoTranscoder.png";
 import YoutubenotesX from "../../assets/youtubenotesx.png";
-import ArrowIcon from "../icons/arrowIcon";
 import WebsiteLink from "../icons/websiteLink";
+import LaserEyes from "../../assets/lasereyes.png";
+import FaceAnonymizer from "../../assets/face-anonymization.png";
 export const projects: ProjectProps[] = [
   {
     name: "PackCheck",
     description: [
-      "Built a web app that scans food product barcodes and flags allergens based on user preferences with real-time alerts.",
+      "Web app that scans food barcodes and alerts users about allergens based on their allergies.",
     ],
     techStack: [
       "React",
@@ -39,7 +40,7 @@ export const projects: ProjectProps[] = [
   {
     name: "ClipCraft",
     description: [
-      "Converts user prompts into LLM-generated math/physics visualizations using Manim and a scalable video pipeline.",
+      "AI-powered tool that creates 2D math/physics visualizations from text prompts using Manim.",
     ],
     techStack: [
       "React",
@@ -61,33 +62,36 @@ export const projects: ProjectProps[] = [
     image: Clipcraft,
   },
   {
-    name: "Video Transcoder",
+    name: "Laser Eyes",
     description: [
-      "Built scalable video transcoding system using GCP Storage/Pub/Sub with FFmpeg for multi-resolution output (360p-1080p).",
+      "Fun image editor that adds laser eye effects to faces using MediaPipe and OpenCV.",
     ],
     techStack: [
-      "GCP",
-      "FFmpeg",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Docker",
-      "Tailwind CSS",
+      "Streamlit",
+      "MediaPipe",
+      "Python",
+      "OpenCV",
+      "Computer Vision",
+      "Image Processing",
     ],
     deployedLinks: [
       {
+        title: "Website",
+        link: "https://laser-eyes.onrender.com",
+      },
+      {
         title: "GitHub",
-        link: "https://github.com/Rishith-S/video-transcoder",
+        link: "https://github.com/Rishith-S/Laser-eyes",
       },
     ],
-    image: VideoTranscoder,
+    image: LaserEyes,
   },
   {
     name: "YoutubenotesX",
     description: [
-      "Developed a web app to import YouTube videos, take timestamped notes, manage playlists, and collaborate using Supabase and YouTube API.",
+      "Turn any YouTube playlist into a personalized course—track progress and take detailed notes for deeper learning.",
     ],
-    techStack: [  
+    techStack: [
       "React",
       "TypeScript",
       "Node.js",
@@ -107,11 +111,33 @@ export const projects: ProjectProps[] = [
     image: YoutubenotesX,
   },
   {
+    name: "Video Transcoder",
+    description: [
+      "Scalable video transcoding system using GCP and FFmpeg for multi-resolution output (360p-1080p).",
+    ],
+    techStack: [
+      "GCP",
+      "FFmpeg",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Docker",
+      "Tailwind CSS",
+    ],
+    deployedLinks: [
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/video-transcoder",
+      },
+    ],
+    image: VideoTranscoder,
+  },
+  {
     name: "Starbucks - Frontend",
     description: [
-      "Built a responsive and visually appealing frontend interface for Starbucks, utilizing React, TypeScript, and Tailwind CSS.",
+      "Responsive Starbucks frontend clone built with React, TypeScript, and Tailwind CSS.",
     ],
-    techStack: [  
+    techStack: [
       "React",
       "TypeScript",
       "Tailwind CSS",
@@ -126,7 +152,32 @@ export const projects: ProjectProps[] = [
         link: "https://github.com/Rishith-S/starbucks",
       },
     ],
-    image: Starbucks, 
+    image: Starbucks,
+  },
+  {
+    name: "Face Anonymizer",
+    description: [
+      "Real-time face anonymization tool with blurring and eye-covering techniques using MediaPipe.",
+    ],
+    techStack: [
+      "Streamlit",
+      "MediaPipe",
+      "Python",
+      "OpenCV",
+      "Computer Vision",
+      "Image Processing",
+    ],
+    deployedLinks: [
+      {
+        title: "Website",
+        link: "https://face-anonymizer-hj7m.onrender.com/",
+      },
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/face-anonymizer",
+      },
+    ],
+    image: FaceAnonymizer,
   },
 ];
 
@@ -151,13 +202,16 @@ export const HighlightedText = (text: string) => {
 
 export default function Projects() {
   return (
-    <div className="project-card">
-      <p className="text-2xl mb-2" id="Projects">
-        Projects
-      </p>
-      <div className="flex flex-col items-center justify-center gap-4">
-        {projects.slice(0, 5).map((project, index) => (
-          <div key={`index-${index}`} className="flex flex-col items-center justify-center"  >
+    <div className="project-card flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
+        <p className="text-2xl font-bold mb-2" id="Projects">
+          Projects
+        </p>
+        <div className="w-[75px] h-[6px] rounded-full bg-[#64ffda]" />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-4 w-full h-full">
+        {projects.map((project, index) => (
+          <div key={`index-${index}`} className="flex flex-col w-full h-full items-center justify-center"  >
             <ProjectCard
               key={index}
               data={{
@@ -167,15 +221,6 @@ export default function Projects() {
             />
           </div>
         ))}
-      </div>
-      <div
-        className="flex view-full-project-archive flex-row p-4 items-center cursor-pointer"
-        onClick={() => window.location.href = "/projects"}
-      >
-        <p className="text-md font-bold text-hover">View Full Project Archive</p>
-        <div className="skill-icon">
-          <ArrowIcon />
-        </div>
       </div>
     </div>
   );
@@ -195,66 +240,47 @@ function ProjectCard({
   return (
     <div
       id="ProjectCard"
-      className="rounded-3xl lg:border-2 hover:border-0 border-gray-800 experience-card cursor-pointer lg:p-4 hover:p-4"
+      className="rounded-3xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[2px] border-gray-800 experience-card cursor-pointer shadow-lg w-full h-full"
     >
-      <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-[100%]">
-        <div className="flex flex-row items-start justify-start md:items-center md:justify-center gap-4">
-          <div>
-            <div className="flex flex-col md:flex-row">
-              <p className="text-xl font-bold text-hover">{data.name} &nbsp;</p>
-            </div>
+      <div className="flex flex-col gap-4 w-full h-full bg-neutral-900/90 rounded-3xl shadow-lg">
+        <div className="flex flex-col h-full w-full">
+          <Image src={data.image} alt={data.name} width={150} height={150} className="rounded-t-3xl w-full h-48 object-fit" />
+          <div className="flex flex-col items-center justify-center gap-4 mt-2 w-full px-6">
+            <ul className={"list-disc list-inside mt-2"}>
+              {data.description.map((point, index) => (
+                <li key={`${index}-${point}`}>
+                  {HighlightedText(point)}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </div>
-
-      <div>
-        <div className="flex flex-row items-center justify-center gap-4 mt-2 w-full">
-          {typeof data.image === "string" ? (
-            <video
-              src={data.image}
-              width={150}
-              height={150}
-              className="rounded-lg border-2 border-gray-800 object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-          ) : (
-            <Image src={data.image} alt={data.name} width={150} height={150} className="rounded-lg border-2 border-gray-800" />
-          )}
-          <ul className={"list-disc list-inside mt-2"}>
-            {data.description.map((point, index) => (
-              <li key={`${index}-${point}`}>
-                {HighlightedText(point)}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex flex-row items-center gap-4 my-4">
-          {data.deployedLinks &&
-            data.deployedLinks.map((link, index) => (
+          <div className="flex flex-row items-center gap-4 my-4 px-6">
+            {data.deployedLinks &&
+              data.deployedLinks.map((link, index) => (
+                <div
+                  key={index}
+                  className="flex flex-row items-center gap-2 link-div cursor-pointer"
+                  onClick={() => {
+                    window.open(link.link, "mywindow");
+                  }}
+                >
+                  <div className="svg-icon">
+                    <WebsiteLink />
+                  </div>
+                  <p className="text-white">{link.title}</p>
+                </div>
+              ))}
+          </div>
+          <div className="flex flex-row gap-2 flex-wrap px-6 mb-4">
+            {data.techStack.map((individualStack, index) => (
               <div
                 key={index}
-                className="flex flex-row items-center gap-2 link-div cursor-pointer"
-                onClick={() => {
-                  window.open(link.link, "mywindow");
-                }}
+                className="rounded-full bg-gray-800 w-auto px-2 py-1"
               >
-                <WebsiteLink />
-                <p className="text-websitelink text-white">{link.title}</p>
+                <p className="font-bold text-teal-300">{individualStack}</p>
               </div>
             ))}
-        </div>
-        <div className="flex flex-row gap-2 flex-wrap mt-2">
-          {data.techStack.map((individualStack, index) => (
-            <div
-              key={index}
-              className="rounded-full bg-gray-800 w-auto px-2 py-1"
-            >
-              <p className="font-bold text-teal-300">{individualStack}</p>
-            </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>

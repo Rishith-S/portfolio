@@ -21,77 +21,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.orbitron{
-  font-family: 'Orbitron', Arial, sans-serif;
-}
-
-#blinkText {
-  font-family: 'Orbitron', Arial, sans-serif;
-  color: #ffffe3;
-  text-shadow: 0 0px 3px, 0 0 0.2px, 0 0 0.01em #fffa00, 0 0 0.5em #fffa00, 0 0 0.01em #fffa00, 0 1px 3px #000;
-  word-spacing: 5px;
-}
-#ExperienceCard:hover {
-  background-color: #001c31;
-}
-
 #ProjectCard:hover {
   background-color: #001c31;
-}
-
-.view-full-project-archive:hover p{
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-color: #64ffda;
-}
-
-.sideHighlight {
-  letter-spacing: 1.5px;
-  color: #ffffe3;
-  text-shadow: 0 0px 0.3px, 0 0 0.02px, 0 0 0.001em #ff9d00, 0 0 0.05em #ff9d00, 0 0 0.001em #ff9d00, 0 0.1px 0.3px #000;
-  word-spacing: 5px;
-}
-
-
-#Overview, #Experience, #Skills, #Projects {
-  font-family: 'Orbitron', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 1.75rem;
-  color: #e6d7fa;
-  letter-spacing: 0.01em;
-
-}
-
-.skills-card:hover {
-  /* box-shadow: 0 0px 5px, 0 0 5px, 0 0 1em #ffffe3, 0 0 1em #ffffe3 , 0 0 0.1em #ffffe3; */
-  /* opacity: 1; */
-  border: 1px solid #626262;
-}
-
-.view-full-project-archive:hover .skill-icon svg {
-  transform: translateX(5px) translateY(-5px) scale(1);
-  fill: #64ffda;
-  transition: transform 0.3s ease;
-}
-
-.view-full-project-archive:hover .skill-icon2 svg {
-  transform: translateX(3px) translateY(-3px) scale(1);
-  fill: #64ffda;
-  transition: transform 0.3s ease;
-}
-
-.backtoHomePage:hover .arrow-icon{
-  transform: translateX(10px) translateY(2px) scale(1);
-  fill: #64ffda;
-  transition: transform 0.3s ease;
-}
-
-.backtoHomePage .arrow-icon{
-  rotate: 113deg;
-}
-
-.view-full-project-archive .skill-icon {
-  rotate: 44.5deg;
 }
 
 #githubLogo:hover, #linkedinLogo:hover, #twitterLogo:hover {
@@ -99,73 +30,29 @@ body {
   opacity: 1;
 }
 
-#name {
-  color: #a6dbe1;
-  text-shadow: 0 0 0.1em, 0 0 1px, 0 0 1em #1e595e, 0 0 0.1em #1e595e, 0 0 1rem #1e595e;
+.skill-icon2 {
+  transition: transform 0.3s ease-in-out;
 }
 
-#textDisplay {
-  animation:  oldLightBlink 8s ease-in-out infinite;
-}
-
-.arrow-icon {
-  transition: transform 0.3s ease;
-  fill: #fff;
-}
-.experience-card:hover .arrow-icon {
-  transform: translateX(5px) translateY(-5px) scale(1);
-  fill: #95ffe6;
-}
-
-.experience-card:hover .text-hover {
-  color: #64ffda
-}
-
-.link-div:hover .websitelink-icon{
-  fill: #64ffda;
-}
-
-.link-div:hover .text-websitelink{
+.view-full-resume-archive:hover .resume-icon {
+  transform: translateX(2px) translateY(-2px);
   color: #64ffda;
 }
 
-@keyframes oldLightBlink {
-  68% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  69%{
-     color: #333;
-  }
-  75% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  76%{
-     color: #333;
-  }
-  80% {
-    color: #333;
-    text-shadow: none;
-  }
-  81% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  82% {
-    color: #333;
-    text-shadow: none;
-  }
-  83% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  95% {
-    color: #333;
-    text-shadow: none;
-  }
-  96% {
-    color: inherit;
-    text-shadow: inherit;
-  }
+.experience-card:hover .experience-icon {
+  transform: translateX(5px) translateY(-5px);
+  color: #64ffda;
+  transition: transform 0.3s ease-in-out;
+}
+
+.experience-card:hover .text-hover {
+  color: #64ffda;
+}
+
+.link-div:hover .text-white {
+  color: #64ffda;
+}
+
+.link-div:hover .svg-icon {
+  color: #64ffda;
 }
