@@ -34,7 +34,7 @@ function ProjectCard({
         alt={data.name}
         width={400}
         height={200}
-        className="rounded-t-3xl object-cover w-full h-48"
+        className="rounded-t-3xl object-cover w-full h-48 select-none"
       />
 
       <div className="p-4 flex flex-col gap-2">

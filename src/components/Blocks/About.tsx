@@ -9,20 +9,20 @@ export default function About() {
         <div className='w-[75px] h-[4px] rounded-full bg-[#64ffda]' />
         <div className='flex flex-row rounded-lg py-2 md:p-4 gap-4 lg:gap-12 items-center'>
           <div className='rounded-full'>
-            <Image src={SjsuLogo} alt="San Jose State University" width={125} height={125} className="rounded-full border-2 border-gray-800" />
+            <Image src={SjsuLogo} alt="San Jose State University" width={125} height={125} className="rounded-full border-2 border-gray-800 select-none" />
           </div>
           <div className='text-[14px] md:text-[16px]'>
-            <p>
+            <p className='font-bold'>
               M.S. Artificial Intelligence
             </p>
-            <p>
+            <p className='font-semibold'>
               San Jose State University,<br className='md:hidden' /> San Jose, CA
             </p>
-            <p>
+            <p className='font-semibold'>
               Expected Graduation:<br className='md:hidden' />December 2026
             </p>
-            <p>
-              GPA: 3.5/4.00
+            <p className='font-semibold'>
+              GPA: 3.5 / 4.00
             </p>
           </div>
         </div>

@@ -244,7 +244,7 @@ function ProjectCard({
     >
       <div className="flex flex-col gap-4 w-full h-full bg-neutral-900/90 rounded-3xl shadow-lg">
         <div className="flex flex-col h-full w-full">
-          <Image src={data.image} alt={data.name} width={150} height={150} className="rounded-t-3xl w-full h-48 object-fit" />
+          <Image src={data.image} alt={data.name} width={150} height={150} className="rounded-t-3xl w-full h-48 object-fit select-none" />
           <div className="flex flex-col items-center justify-center gap-4 mt-2 w-full px-6">
             <ul className={"list-disc list-inside mt-2"}>
               {data.description.map((point, index) => (

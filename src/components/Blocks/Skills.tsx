@@ -63,7 +63,7 @@ export default function Skills() {
 
 function WhatICanBuild({ title, description, SvgIcon }: { title: string, description: string, SvgIcon: () => React.JSX.Element }) {
   return (
-    <div className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[0.75px] flex items-start justify-start lg:items-center lg:justify-center shadow-lg">
+    <div className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] flex items-start justify-start lg:items-center lg:justify-center shadow-lg">
       <div className="flex flex-row gap-6 w-full h-full bg-neutral-900/80 rounded-lg p-6">
         <div className="w-12 h-12">
           <SvgIcon />
@@ -80,7 +80,7 @@ function WhatICanBuild({ title, description, SvgIcon }: { title: string, descrip
 function IndividualSkill({ title, SvgIcon }: { title: string, SvgIcon: () => React.JSX.Element }) {
   return (
     <div
-      className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[0.75px] flex justify-start items-center lg:justify-center shadow-lg">
+      className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] flex justify-start items-center lg:justify-center shadow-lg">
       <div className="w-full h-full p-4 bg-neutral-900/80 rounded-lg flex  justify-start items-center lg:justify-center gap-2 shadow-lg">
         <div className="w-7 h-7">
           <SvgIcon />

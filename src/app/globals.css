@@ -56,3 +56,8 @@ body {
 .link-div:hover .svg-icon {
   color: #64ffda;
 }
+
+::selection {
+  background-color: #64ffda;
+  color: #000000;
+}

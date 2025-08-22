@@ -34,7 +34,7 @@ const SideCard = () => {
               <Image
                 src={profile}
                 alt="profile"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full select-none"
                 fill={false}
                 style={{ width: "100%", height: "100%" }}
               />

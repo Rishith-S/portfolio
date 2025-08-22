@@ -149,7 +149,7 @@ function ExperienceCard({
         <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-[100%]">
           <div className="flex flex-row items-start justify-start md:items-center md:justify-center gap-4">
             <div className="w-12 h-12 bg-white rounded-xl justify-start items-start">
-              <Image src={data.imageLogo} alt="eksaq" width={100} height={100} className="rounded-md" />
+              <Image src={data.imageLogo} alt="eksaq" width={100} height={100} className="rounded-md select-none" />
             </div>
             <div>
               <div className="flex flex-col md:flex-row">
