@@ -126,7 +126,12 @@ function PersonalInfoIcons() {
         </div>
         <div>
           <p className="text-md font-bold text-neutral-400">Email</p>
-          <p className="text-md text-white font-semibold">saginalarishith@gmail.com</p>
+          <p
+            className="text-md text-white font-semibold cursor-pointer hover:underline hover:text-[#64ffda]"
+            onClick={() => window.open('mailto:saginalarishith@gmail.com', '_self')}
+          >
+            saginalarishith@gmail.com
+          </p>
         </div>
       </div>
       <div className="flex flex-row gap-4">
