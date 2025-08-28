@@ -34,7 +34,7 @@ export default function About() {
               Expected Graduation:<br className='md:hidden' />December 2026
             </p>
             <p className='font-semibold'>
-              GPA: 3.5 / 4.00
+              GPA: 3.5 / 4.0
             </p>
           </div>
         </div>
