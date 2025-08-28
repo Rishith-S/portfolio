@@ -17,15 +17,29 @@ export default function Home() {
         <div className="absolute hidden md:flex top-0 right-0 w-fit px-8 py-6 border-b-[1px] border-l-[1px] border-neutral-700 z-10 bg-neutral-800/90 rounded-bl-3xl">
           <Navbar currentSection={currentSection} setCurrentSection={setCurrentSection} />
         </div>
-        {
-          currentSection === 0 && <div id="about" className="w-full">
-            <About />
-            <Skills />
-          </div>
-        }
-        {currentSection === 1 && <div id="experience" className="w-full"><Experience /></div>}
-        {currentSection === 2 && <div id="projects" className="w-full"><Projects /></div>}
-        {currentSection === 3 && <div id="contact" className="w-full"><Contact /></div>}
+        <div className="transition-all duration-700 ease-in-out transform">
+          {currentSection === 0 && (
+            <div id="about" className="w-full animate-fadeIn">
+              <About />
+              <Skills />
+            </div>
+          )}
+          {currentSection === 1 && (
+            <div id="experience" className="w-full animate-fadeIn">
+              <Experience />
+            </div>
+          )}
+          {currentSection === 2 && (
+            <div id="projects" className="w-full animate-fadeIn">
+              <Projects />
+            </div>
+          )}
+          {currentSection === 3 && (
+            <div id="contact" className="w-full animate-fadeIn">
+              <Contact />
+            </div>
+          )}
+        </div>
       </div>
       <div className="fixed flex md:hidden bottom-0 left-0 w-full h-16 z-10 flex items-center justify-center bg-neutral-800/30 rounded-t-2xl backdrop-blur-xl" >
         <Navbar currentSection={currentSection} setCurrentSection={setCurrentSection} />

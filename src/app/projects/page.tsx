@@ -42,7 +42,7 @@ function ProjectCard({
           <p className="text-lg font-bold text-hover">{data.name} &nbsp;</p>
           <ul className={"list-disc list-inside"}>
             {data.description.map((point, index) => (
-              <li key={`${index}-${point}`} className="text-[15px] text-white text-justify">
+              <li key={`${index}-${point}`} className="text-[15px] text-[#ffffff] text-justify">
                 {point}
               </li>
             ))}
@@ -59,7 +59,7 @@ function ProjectCard({
                 }}
               >
                 <WebsiteLink />
-                <p className="text-websitelink text-white text-sm">{link.title}</p>
+                <p className="text-websitelink text-[#ffffff] text-sm">{link.title}</p>
               </div>
             ))}
         </div>

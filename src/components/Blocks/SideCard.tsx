@@ -47,7 +47,7 @@ const SideCard = () => {
             </span>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="text-[20px] md:text-[24px] lg:text-[28px] font-semibold text-white text-center">
+            <p className="text-[20px] md:text-[24px] lg:text-[28px] font-semibold text-[#ffffff] text-center">
               Rishith Saginala
             </p>
             <div className="flex flex-col gap-4 items-start lg:items-center text-md font-semibold">
@@ -127,7 +127,7 @@ function PersonalInfoIcons() {
         <div>
           <p className="text-md font-bold text-neutral-400">Email</p>
           <p
-            className="text-md text-white font-semibold cursor-pointer hover:underline hover:text-[#64ffda]"
+            className="text-md text-[#ffffff] font-semibold cursor-pointer hover:underline hover:text-[#64ffda]"
             onClick={() => window.open('mailto:saginalarishith@gmail.com', '_self')}
           >
             saginalarishith@gmail.com
@@ -145,7 +145,7 @@ function PersonalInfoIcons() {
         </div>
         <div>
           <p className="text-md font-bold text-neutral-400">Phone</p>
-          <p className="text-md text-white font-semibold">+1 (510) 266-4173</p>
+          <p className="text-md text-[#ffffff] font-semibold">+1 (510) 266-4173</p>
         </div>
       </div>
       <div className="flex flex-row gap-4">
@@ -159,7 +159,7 @@ function PersonalInfoIcons() {
         </div>
         <div>
           <p className="text-md font-bold text-neutral-400">Location</p>
-          <p className="text-md text-white font-semibold">San Jose, CA</p>
+          <p className="text-md text-[#ffffff] font-semibold">San Jose, CA</p>
         </div>
       </div>
     </div>

@@ -92,13 +92,13 @@ const HighlightedText = (text: string) => {
   const formattedText = text.split(/(<b>.*?<\/b>)/).map((part, index) => {
     if (part.startsWith("<b>") && part.endsWith("</b>")) {
       return (
-        <span key={index} className="font-bold text-[14px] md:text-[16px] text-white">
+        <span key={index} className="font-bold text-[14px] md:text-[16px] text-[#ffffff]">
           {part.replace("<b>", "").replace("</b>", "")}
         </span>
       );
     }
     return (
-      <span key={index} className="text-[14px] md:text-[16px] text-white">
+      <span key={index} className="text-[14px] md:text-[16px] text-[#ffffff]">
         {part}
       </span>
     );
@@ -163,7 +163,7 @@ function ExperienceCard({
                   </div>
                 </div>
               </div>
-              <p className="text-sm md:text-lg font-bold text-white">{data.duration}</p>
+              <p className="text-sm md:text-lg font-bold text-[#ffffff]">{data.duration}</p>
             </div>
           </div>
         </div>
@@ -188,7 +188,7 @@ function ExperienceCard({
                   }}
                 >
                   <WebsiteLink />
-                  <p className="text-websitelink text-white">{link.title}</p>
+                  <p className="text-websitelink text-[#ffffff]">{link.title}</p>
                 </div>
               ))}
           </div>

@@ -77,7 +77,7 @@ export const projects: ProjectProps[] = [
     deployedLinks: [
       {
         title: "Website",
-        link: "https://laser-eyes.onrender.com",
+        link: "https://laser-eyes-8x2c.onrender.com/",
       },
       {
         title: "GitHub",
@@ -170,7 +170,7 @@ export const projects: ProjectProps[] = [
     deployedLinks: [
       {
         title: "Website",
-        link: "https://face-anonymizer-hj7m.onrender.com/",
+        link: "https://face-anonymizer-8kwh.onrender.com",
       },
       {
         title: "GitHub",
@@ -185,13 +185,13 @@ export const HighlightedText = (text: string) => {
   const formattedText = text.split(/(<b>.*?<\/b>)/).map((part, index) => {
     if (part.startsWith("<b>") && part.endsWith("</b>")) {
       return (
-        <span key={index} className="font-bold text-[16px] text-white 2xl:text-[16px]">
+        <span key={index} className="font-bold text-[16px] text-[#ffffff] 2xl:text-[16px]">
           {part.replace("<b>", "").replace("</b>", "")}
         </span>
       );
     }
     return (
-      <span key={index} className="text-[16px] w-full text-white">
+      <span key={index} className="text-[16px] w-full text-[#ffffff]">
         {part}
       </span>
     );
@@ -240,7 +240,7 @@ function ProjectCard({
   return (
     <div
       id="ProjectCard"
-      className="rounded-3xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[2px] border-gray-800 experience-card cursor-pointer shadow-lg w-full h-full"
+      className="rounded-3xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] border-gray-800 experience-card cursor-pointer shadow-lg w-full h-full"
     >
       <div className="flex flex-col gap-4 w-full h-full bg-neutral-900/90 rounded-3xl shadow-lg">
         <div className="flex flex-col h-full w-full">
@@ -267,7 +267,7 @@ function ProjectCard({
                   <div className="svg-icon">
                     <WebsiteLink />
                   </div>
-                  <p className="text-white">{link.title}</p>
+                  <p className="text-[#ffffff] text-websitelink">{link.title}</p>
                 </div>
               ))}
           </div>
