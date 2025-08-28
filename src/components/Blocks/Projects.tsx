@@ -9,6 +9,7 @@ import YoutubenotesX from "../../assets/youtubenotesx.png";
 import WebsiteLink from "../icons/websiteLink";
 import LaserEyes from "../../assets/lasereyes.png";
 import FaceAnonymizer from "../../assets/face-anonymization.png";
+import AirpodsPro from "../../assets/airpodspro.png";
 export const projects: ProjectProps[] = [
   {
     name: "PackCheck",
@@ -36,6 +37,29 @@ export const projects: ProjectProps[] = [
       },
     ],
     image: Packcheck,
+  },
+  {
+    name: "AirpodsPro - Frontend",
+    description: [
+      "Responsive Airpods Pro frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    deployedLinks: [
+      {
+        title: "Website",
+        link: "https://airpodspro.pages.dev/",
+      },
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/airpodspro",
+      },
+    ],
+    image: AirpodsPro,
   },
   {
     name: "ClipCraft",
@@ -135,17 +159,18 @@ export const projects: ProjectProps[] = [
   {
     name: "Starbucks - Frontend",
     description: [
-      "Responsive Starbucks frontend clone built with React, TypeScript, and Tailwind CSS.",
+      "Responsive Starbucks frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
     ],
     techStack: [
       "React",
       "TypeScript",
       "Tailwind CSS",
+      "Framer Motion",
     ],
     deployedLinks: [
       {
         title: "Website",
-        link: "https://starbucks-m8ec.onrender.com/",
+        link: "starbucks-fe.pages.dev",
       },
       {
         title: "GitHub",
@@ -208,6 +233,11 @@ export default function Projects() {
           Projects
         </p>
         <div className="w-[75px] h-[6px] rounded-full bg-[#64ffda]" />
+      </div>
+      <div className="flex flex-row gap-4">
+        <div>
+
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-4 w-full h-full">
         {projects.map((project, index) => (
