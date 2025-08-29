@@ -51,9 +51,9 @@ const SideCard = () => {
               Rishith Saginala
             </p>
             <div className="flex flex-col gap-4 items-start lg:items-center text-md font-semibold">
-              <p className="flex bg-neutral-800 px-4 py-1 rounded-md">
-                Software Developer
-              </p>
+                <p className="flex px-4 py-1 rounded-md">
+                  Software Developer
+                </p>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const SideCard = () => {
           <div className='w-full flex gap-4 flex-col lg:items-center'>
             <div className={`flex`}>
               <div className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[0.75px] shadow-lg flex items-center justify-center">
-                <div className="px-4 py-1 rounded-lg bg-neutral-900/80 flex flex-row items-center cursor-pointer view-full-resume-archive" onClick={() => { window.open('https://drive.google.com/file/d/1TGGL2ZROEepOLxj2f0mZstQJOz2U-Thb/view?usp=sharing', "mywindow"); }}>
+                <div className="px-4 py-1 rounded-lg bg-neutral-900/80 flex flex-row items-center cursor-pointer view-full-resume-archive" onClick={() => { window.open('https://drive.google.com/file/d/1ISytkgU5mWf_JHoEsGNx0uv9QLlt-D2N/view?usp=sharing', "mywindow"); }}>
                   <p className="text-md font-bold text-[#64ffda]">View Resume</p>
                   <div className="resume-icon w-5 h-5"><ArrowIcon /></div>
                 </div>
@@ -150,7 +150,7 @@ function PersonalInfoIcons() {
       </div>
       <div className="flex flex-row gap-4">
         <div
-          className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[0.75px] flex items-center justify-center">
+          className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] flex items-center justify-center">
           <div className="w-full h-full bg-neutral-900/80 rounded-xl flex items-center justify-center shadow-lg">
             <div className="w-5 h-5">
               <LocationIcon />
