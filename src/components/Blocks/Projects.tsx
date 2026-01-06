@@ -8,10 +8,133 @@ import VideoTranscoder from "../../assets/videoTranscoder.png";
 import YoutubenotesX from "../../assets/youtubenotesx.png";
 import WebsiteLink from "../icons/websiteLink";
 import LaserEyes from "../../assets/lasereyes.png";
-import FaceAnonymizer from "../../assets/face-anonymization.png";
+import DepthAi from "../../assets/depthai.png"
 import AirpodsPro from "../../assets/airpodspro.png";
+import DaysofML from "../../assets/100DaysofML.png"
+import RAFTSLMRAG from "../../assets/RAFTSLMRAG.png";
 import { useState } from "react";
 export const projects: ProjectProps[] = [
+  {
+    name: "ClipCraft",
+    description: [
+      "AI-powered tool that creates 2D math/physics visualizations from text prompts using Manim.",
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Docker",
+      "Postgres",
+      "Supabase",
+      "Redis",
+      "Tailwind CSS",
+      "Prompt Engineering",
+    ],
+    deployedLinks: [
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/clipcraft",
+      },
+    ],
+    image: Clipcraft,
+    category: "Full Stack",
+  },
+  {
+    name: "YoutubenotesX",
+    description: [
+      "Turn any YouTube playlist into a personalized course—track progress and take detailed notes for deeper learning.",
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Supabase",
+      "Tailwind CSS",
+    ],
+    deployedLinks: [
+      {
+        title: "Website",
+        link: "https://youtubenotesx.onrender.com/",
+      },
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/youtubenotesapp",
+      },
+    ],
+    image: YoutubenotesX,
+    category: "Full Stack",
+  },
+  {
+    name: "RAFT SLM RAG",
+    description: [
+      "Privacy-preserving, cost-efficient customer support assistant combining Edge AI with Cloud LLMs, achieving <b>90% cost reduction</b> and <b>10x token efficiency</b> through hierarchical RAG pipeline.",
+    ],
+    techStack: [
+      "Python",
+      "FastAPI",
+      "MLX",
+      "FAISS",
+      "Llama 3",
+      "Gemini API",
+      "Sentence-Transformers",
+      "RAG",
+    ],
+    deployedLinks: [
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/context-aware-support-llm",
+      },
+    ],
+    image: RAFTSLMRAG,
+    category: "ML & DL",
+  },
+  {
+    name: "PackCheck",
+    description: [
+      "Web app to put text behind the main object in image",
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+    deployedLinks: [
+      {
+        title: "Website",
+        link: "https://depth-ai-eta.vercel.app/",
+      },
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/depth.ai",
+      },
+    ],
+    image: DepthAi,
+    category: "Frontend",
+  },
+  {
+    name: "AirpodsPro - Frontend",
+    description: [
+      "Responsive Airpods Pro frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
+    ],
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    deployedLinks: [
+      {
+        title: "Website",
+        link: "https://airpodspro.pages.dev/",
+      },
+      {
+        title: "GitHub",
+        link: "https://github.com/Rishith-S/airpodspro",
+      },
+    ],
+    image: AirpodsPro,
+    category: "Frontend",
+  },
   {
     name: "PackCheck",
     description: [
@@ -41,53 +164,26 @@ export const projects: ProjectProps[] = [
     category: "Full Stack",
   },
   {
-    name: "AirpodsPro - Frontend",
+    name: "100DaysofML",
     description: [
-      "Responsive Airpods Pro frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
+      "Notes for 100DaysofML playlist",
     ],
     techStack: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
+      "docusaurus",
+      "typescript"
     ],
     deployedLinks: [
       {
         title: "Website",
-        link: "https://airpodspro.pages.dev/",
+        link: "https://rishith-s.github.io/100daysofML/",
       },
       {
         title: "GitHub",
-        link: "https://github.com/Rishith-S/airpodspro",
+        link: "https://github.com/Rishith-S/100daysofML",
       },
     ],
-    image: AirpodsPro,
-    category: "Frontend",
-  },
-  {
-    name: "ClipCraft",
-    description: [
-      "AI-powered tool that creates 2D math/physics visualizations from text prompts using Manim.",
-    ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Docker",
-      "Postgres",
-      "Supabase",
-      "Redis",
-      "Tailwind CSS",
-      "Prompt Engineering",
-    ],
-    deployedLinks: [
-      {
-        title: "GitHub",
-        link: "https://github.com/Rishith-S/clipcraft",
-      },
-    ],
-    image: Clipcraft,
-    category: "Full Stack",
+    image: DaysofML,
+    category: "ML & DL",
   },
   {
     name: "Laser Eyes",
@@ -114,31 +210,6 @@ export const projects: ProjectProps[] = [
     ],
     image: LaserEyes,
     category: "ML & DL",
-  },
-  {
-    name: "YoutubenotesX",
-    description: [
-      "Turn any YouTube playlist into a personalized course—track progress and take detailed notes for deeper learning.",
-    ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Supabase",
-      "Tailwind CSS",
-    ],
-    deployedLinks: [
-      {
-        title: "Website",
-        link: "https://youtubenotesx.onrender.com/",
-      },
-      {
-        title: "GitHub",
-        link: "https://github.com/Rishith-S/youtubenotesapp",
-      },
-    ],
-    image: YoutubenotesX,
-    category: "Full Stack",
   },
   {
     name: "Video Transcoder",
@@ -177,7 +248,7 @@ export const projects: ProjectProps[] = [
     deployedLinks: [
       {
         title: "Website",
-        link: "starbucks-fe.pages.dev",
+        link: "https://starbucks-fe.pages.dev",
       },
       {
         title: "GitHub",
@@ -187,45 +258,19 @@ export const projects: ProjectProps[] = [
     image: Starbucks,
     category: "Frontend",
   },
-  {
-    name: "Face Anonymizer",
-    description: [
-      "Real-time face anonymization tool with blurring and eye-covering techniques using MediaPipe.",
-    ],
-    techStack: [
-      "Streamlit",
-      "MediaPipe",
-      "Python",
-      "OpenCV",
-      "Computer Vision",
-      "Image Processing",
-    ],
-    deployedLinks: [
-      {
-        title: "Website",
-        link: "https://face-anonymizer-8kwh.onrender.com",
-      },
-      {
-        title: "GitHub",
-        link: "https://github.com/Rishith-S/face-anonymizer",
-      },
-    ],
-    image: FaceAnonymizer,
-    category: "ML & DL",
-  },
 ];
 
 export const HighlightedText = (text: string) => {
   const formattedText = text.split(/(<b>.*?<\/b>)/).map((part, index) => {
     if (part.startsWith("<b>") && part.endsWith("</b>")) {
       return (
-        <span key={index} className="font-bold text-[16px] text-[#ffffff] 2xl:text-[16px]">
+        <span key={index} className="font-bold text-sm text-[#ffffff]">
           {part.replace("<b>", "").replace("</b>", "")}
         </span>
       );
     }
     return (
-      <span key={index} className="text-[16px] w-full text-[#ffffff]">
+      <span key={index} className="text-sm w-full text-[#ffffff]">
         {part}
       </span>
     );
@@ -254,9 +299,9 @@ export default function Projects() {
         setIsDropdownOpen={setIsDropdownOpen}
         categories={categories}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-4 w-full h-full">
+      <div className="flex flex-col gap-6 w-full">
         {projects.filter((project) => selectedCategory === "All" || project.category === selectedCategory).map((project, index) => (
-          <div key={`index-${index}`} className="flex flex-col w-full h-full items-center justify-center"  >
+          <div key={`index-${index}`} className="flex flex-col w-full items-center justify-center"  >
             <ProjectCard
               key={index}
               data={{
@@ -286,46 +331,55 @@ function ProjectCard({
   return (
     <div
       id="ProjectCard"
-      className="rounded-3xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] border-gray-800 experience-card cursor-pointer shadow-lg w-full h-full"
+      className="rounded-2xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] border-gray-800 experience-card cursor-pointer shadow-lg w-full"
     >
-      <div className="flex flex-col gap-4 w-full h-full bg-neutral-900/90 rounded-3xl shadow-lg">
-        <div className="flex flex-col h-full w-full">
-          <Image src={data.image} alt={data.name} width={150} height={150} className="rounded-t-3xl w-full h-48 object-fit select-none" />
-          <div className="flex flex-col items-center justify-center gap-4 mt-2 w-full px-6">
-            <ul className={"list-disc list-inside mt-2"}>
+      <div className="flex flex-row gap-4 w-full bg-neutral-900/90 rounded-2xl shadow-lg">
+        {/* Image Section */}
+        <div className="w-2/5 flex-shrink-0">
+          <Image src={data.image} alt={data.name} width={300} height={250} className="rounded-l-2xl w-full h-full object-cover select-none" />
+        </div>
+        
+        {/* Content Section */}
+        <div className="flex flex-col justify-between py-4 pr-5 flex-1">
+          <div className="flex flex-col gap-2">
+            <ul className={"list-disc list-inside"}>
               {data.description.map((point, index) => (
-                <li key={`${index}-${point}`}>
+                <li key={`${index}-${point}`} className="text-sm">
                   {HighlightedText(point)}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="flex flex-row items-center gap-4 my-4 px-6">
-            {data.deployedLinks &&
-              data.deployedLinks.map((link, index) => (
+          
+          <div className="flex flex-col gap-3 mt-3">
+            <div className="flex flex-row items-center gap-3">
+              {data.deployedLinks &&
+                data.deployedLinks.map((link, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-row items-center gap-2 link-div cursor-pointer"
+                    onClick={() => {
+                      window.open(link.link, "mywindow");
+                    }}
+                  >
+                    <div className="svg-icon">
+                      <WebsiteLink />
+                    </div>
+                    <p className="text-[#ffffff] text-websitelink">{link.title}</p>
+                  </div>
+                ))}
+            </div>
+            
+            <div className="flex flex-row gap-1.5 flex-wrap">
+              {data.techStack.map((individualStack, index) => (
                 <div
                   key={index}
-                  className="flex flex-row items-center gap-2 link-div cursor-pointer"
-                  onClick={() => {
-                    window.open(link.link, "mywindow");
-                  }}
+                  className="rounded-full bg-gray-800 w-auto px-2 py-0.5"
                 >
-                  <div className="svg-icon">
-                    <WebsiteLink />
-                  </div>
-                  <p className="text-[#ffffff] text-websitelink">{link.title}</p>
+                  <p className="font-semibold text-teal-300 text-xs">{individualStack}</p>
                 </div>
               ))}
-          </div>
-          <div className="flex flex-row gap-2 flex-wrap px-6 mb-4">
-            {data.techStack.map((individualStack, index) => (
-              <div
-                key={index}
-                className="rounded-full bg-gray-800 w-auto px-2 py-1"
-              >
-                <p className="font-bold text-teal-300">{individualStack}</p>
-              </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
@@ -392,7 +446,7 @@ function ProjectTopBar({
                     setIsDropdownOpen(false);
                   }}
                 >
-                  <span className="text-md font-medium font-bold">{category}</span>
+                  <span className="text-md font-medium">{category}</span>
                 </div>
               ))}
             </div>

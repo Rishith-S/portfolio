@@ -9,8 +9,8 @@ export default function About() {
         <p className='text-xl lg:text-2xl lg:mb-2 mb-1 heading-primary font-bold' id='education'>About</p>
         <div className='w-[75px] h-[4px] rounded-full bg-[#64ffda]' />
         <div className='flex flex-col p-[1px] rounded-lg my-4 bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800'>
-          <div className='flex flex-col p-4 rounded-lg bg-neutral-900/80'>
-            <p className='text-md font-semibold lg:text-[16px]'>
+          <div className='flex flex-col p-4 rounded-lg bg-neutral-900/95'>
+            <p className='text-md lg:text-[16px]'>
             As a software engineer and graduate student at SJSU, I am passionate about building impactful web applications and scalable systems. I enjoy designing creative solutions and am driven by a curiosity to solve challenging technical problems.
             </p>
           </div>

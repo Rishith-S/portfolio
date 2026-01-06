@@ -13,7 +13,7 @@ const SideCard = () => {
   const [showContacts, setShowContacts] = useState(false);
   return (
     <div className="p-4 relative lg:p-8 flex flex-col lg:gap-1 bg-neutral-900 border-[1px] border-neutral-700 rounded-3xl h-fit transition-all duration-300">
-      <div className={`absolute flex lg:hidden top-0 right-0 w-8 h-8 md:w-36 p-[1px] flex items-center justify-center shadow-lg bg-gradient-to-br rounded-bl-2xl rounded-tr-3xl cursor-pointer ${showContacts ? "from-[#64ffda] via-neutral-800 to-neutral-800 transition-all duration-400" : "from-neutral-600 via-neutral-800 to-neutral-800 transition-all duration-400"}`} onClick={() => setShowContacts(prev => !prev)}>
+      <div className={`absolute lg:hidden top-0 right-0 w-8 h-8 md:w-36 p-[1px] flex items-center justify-center shadow-lg bg-gradient-to-br rounded-bl-2xl rounded-tr-3xl cursor-pointer ${showContacts ? "from-[#64ffda] via-neutral-800 to-neutral-800 transition-all duration-400" : "from-neutral-600 via-neutral-800 to-neutral-800 transition-all duration-400"}`} onClick={() => setShowContacts(prev => !prev)}>
         <div className={`bg-neutral-900 transition-all duration-300 rounded-bl-2xl rounded-tr-3xl w-full h-full flex items-center justify-center gap-2`}>
           <p className="hidden md:flex lg:hidden text-[#64ffda] font-semibold text-sm">Show Contacts</p>
           <svg xmlns="http://www.w3.org/2000/svg" className={`flex w-4 h-4 lg:hidden ${showContacts ? "rotate-180 transition-all duration-300" : "transition-all duration-300"}`} viewBox="0 0 512 512" fill="none">

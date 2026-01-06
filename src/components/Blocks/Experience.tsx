@@ -3,6 +3,7 @@ import EksaqLogo from "../../assets/eksaqLogo.png";
 import JediteckLogo from "../../assets/jediteckLogo.png";
 import ArrowIcon from "../icons/arrowIcon";
 import WebsiteLink from "../icons/websiteLink";
+import AimlclubSjsu from "../../assets/aimlclubsjsu.png"
 
 const experiences = [
   {
@@ -37,6 +38,29 @@ const experiences = [
       {
         title: "Website Link - RCA",
         link: "https://rca.eksaq.in",
+      },
+    ],
+  },
+  {
+    name: "AIML Club SJSU",
+    role: "Web Dev Officer",
+    duration: "Sep 2025 - Dec 2025",
+    companyWebsite: "https://www.ai-ml-club-sjsu.com/about",
+    description: [
+      "Implemented a check-in feature allowing PR members to attend events using attendance codes.",
+      "Resolved multiple frontend bugs to improve user experience and application stability.",
+    ],
+    imageLogo: AimlclubSjsu,
+    techStack: [
+      "Typescript",
+      "Supabase",
+      "Postgres",
+      "NextJS"
+    ],
+    deployedLinks: [
+      {
+        title: "Website Link",
+        link: "https://www.ai-ml-club-sjsu.com/about",
       },
     ],
   },

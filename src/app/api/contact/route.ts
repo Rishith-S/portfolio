@@ -4,7 +4,7 @@ import { Resend } from "resend";
 
 const schema = z.object({
   name: z.string().min(2).max(100),
-  email: z.string().email({ message: "Invalid email address" }),
+  email: z.email({ message: "Invalid email address" }),
   subject: z.string().min(2).max(120),
   message: z.string().min(2).max(5000),
 });
