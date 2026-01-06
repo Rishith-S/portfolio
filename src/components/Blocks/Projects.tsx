@@ -10,7 +10,7 @@ import WebsiteLink from "../icons/websiteLink";
 import LaserEyes from "../../assets/lasereyes.png";
 import DepthAi from "../../assets/depthai.png"
 import AirpodsPro from "../../assets/airpodspro.png";
-import DaysofML from "../../assets/100DaysofML.png"
+import DaysofML from "../../assets/100daysofML.png"
 import RAFTSLMRAG from "../../assets/RAFTSLMRAG.png";
 import { useState } from "react";
 export const projects: ProjectProps[] = [
