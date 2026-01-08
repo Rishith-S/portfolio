@@ -41,7 +41,7 @@ export default function Home() {
           )}
         </div>
       </div>
-      <div className="fixed flex md:hidden bottom-0 left-0 w-full h-16 z-10 flex items-center justify-center bg-neutral-800/30 rounded-t-2xl backdrop-blur-xl" >
+      <div className="fixed flex md:hidden bottom-0 left-0 w-full h-16 z-10 items-center justify-center bg-neutral-800/30 rounded-t-2xl backdrop-blur-xl" >
         <Navbar currentSection={currentSection} setCurrentSection={setCurrentSection} />
       </div>
     </div>

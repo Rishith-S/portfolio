@@ -42,7 +42,7 @@ export const projects: ProjectProps[] = [
   {
     name: "YoutubenotesX",
     description: [
-      "Turn any YouTube playlist into a personalized course—track progress and take detailed notes for deeper learning.",
+      "Turn any YouTube playlist into a personalized course, track progress and take detailed notes for deeper learning.",
     ],
     techStack: [
       "React",
@@ -333,26 +333,26 @@ function ProjectCard({
       id="ProjectCard"
       className="rounded-2xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] border-gray-800 experience-card cursor-pointer shadow-lg w-full"
     >
-      <div className="flex flex-row gap-4 w-full bg-neutral-900/90 rounded-2xl shadow-lg">
+      <div className="flex flex-col lg:flex-row gap-0 lg:gap-4 w-full bg-neutral-900/90 rounded-2xl shadow-lg">
         {/* Image Section */}
-        <div className="w-2/5 flex-shrink-0">
-          <Image src={data.image} alt={data.name} width={300} height={250} className="rounded-l-2xl w-full h-full object-cover select-none" />
+        <div className="w-full lg:w-2/5 flex-shrink-0">
+          <Image src={data.image} alt={data.name} width={300} height={250} className="rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none w-full h-56 lg:h-full object-cover select-none" />
         </div>
         
         {/* Content Section */}
-        <div className="flex flex-col justify-between py-4 pr-5 flex-1">
-          <div className="flex flex-col gap-2">
-            <ul className={"list-disc list-inside"}>
+        <div className="flex flex-col justify-between p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1">
+          <div className="flex flex-col gap-3">
+            <ul className={"list-disc list-inside space-y-1"}>
               {data.description.map((point, index) => (
-                <li key={`${index}-${point}`} className="text-sm">
+                <li key={`${index}-${point}`} className="text-sm lg:text-sm">
                   {HighlightedText(point)}
                 </li>
               ))}
             </ul>
           </div>
           
-          <div className="flex flex-col gap-3 mt-3">
-            <div className="flex flex-row items-center gap-3">
+          <div className="flex flex-col gap-3 mt-4">
+            <div className="flex flex-row items-center gap-3 flex-wrap">
               {data.deployedLinks &&
                 data.deployedLinks.map((link, index) => (
                   <div
@@ -365,7 +365,7 @@ function ProjectCard({
                     <div className="svg-icon">
                       <WebsiteLink />
                     </div>
-                    <p className="text-[#ffffff] text-websitelink">{link.title}</p>
+                    <p className="text-[#ffffff] text-websitelink text-sm">{link.title}</p>
                   </div>
                 ))}
             </div>
@@ -374,7 +374,7 @@ function ProjectCard({
               {data.techStack.map((individualStack, index) => (
                 <div
                   key={index}
-                  className="rounded-full bg-gray-800 w-auto px-2 py-0.5"
+                  className="rounded-full bg-gray-800 w-auto px-2 py-1"
                 >
                   <p className="font-semibold text-teal-300 text-xs">{individualStack}</p>
                 </div>

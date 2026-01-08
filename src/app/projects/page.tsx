@@ -8,11 +8,11 @@ import Image from 'next/image';
 export default function Projects() {
   return (
     <div>
-      <div className='flex flex-row backtoHomePage gap-2 px-6 mb-2 mt-4 cursor-pointer' onClick={() => window.location.href = "/"}>
+      <div className='flex flex-row backtoHomePage gap-2 px-4 sm:px-6 mb-2 mt-4 cursor-pointer' onClick={() => window.location.href = "/"}>
         <div className='arrow-icon'><ArrowIcon /></div>
         <p className='text-lg font-bold text-hover'>Rishith Saginala</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 w-full p-3 sm:p-4">
           {projects.map((project, index) => (
             <ProjectCard key={index} data={project} />
           ))}
@@ -34,15 +34,15 @@ function ProjectCard({
         alt={data.name}
         width={400}
         height={200}
-        className="rounded-t-3xl object-cover w-full h-48 select-none"
+        className="rounded-t-3xl object-cover w-full h-40 sm:h-48 select-none"
       />
 
-      <div className="p-4 flex flex-col gap-2">
-        <div className="flex flex-col items-center justify-center gap-2 w-full">
-          <p className="text-lg font-bold text-hover">{data.name} &nbsp;</p>
+      <div className="p-3 sm:p-4 flex md:flex-col gap-2">
+        <div className="flex fle md:flex-col items-center justify-center gap-2 w-full">
+          <p className="text-base sm:text-lg font-bold text-hover">{data.name} &nbsp;</p>
           <ul className={"list-disc list-inside"}>
             {data.description.map((point, index) => (
-              <li key={`${index}-${point}`} className="text-[15px] text-[#ffffff] text-justify">
+              <li key={`${index}-${point}`} className="text-sm sm:text-[15px] text-[#ffffff] text-justify">
                 {point}
               </li>
             ))}
