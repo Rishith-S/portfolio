@@ -58,7 +58,7 @@ export const projects: ProjectProps[] = [
       },
       {
         title: "GitHub",
-        link: "https://github.com/Rishith-S/youtubenotesapp",
+        link: "https://github.com/Rishith-S/YoutubenotesX",
       },
     ],
     image: YoutubenotesX,
