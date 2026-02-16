@@ -21,43 +21,46 @@ import PrismaIcon from "../icons/prismaIcon";
 
 
 export default function Skills() {
+  const skillGroups =
+    {
+      title: "Backend & Systems",
+      skills: [
+        { title: "C++", SvgIcon: CppIcon },
+        { title: "Java", SvgIcon: JavaIcon },
+        { title: "NodeJs", SvgIcon: NodejsIcon },
+        { title: "Postgres", SvgIcon: PostgressIcon },
+        { title: "AWS", SvgIcon: AwsIcon },
+        { title: "Mongo DB", SvgIcon: mongoDBIcon },
+        { title: "Prisma", SvgIcon: PrismaIcon },
+        { title: "Git", SvgIcon: gitIcon },
+        { title: "Javascript", SvgIcon: JSIcon },
+        { title: "Typescript", SvgIcon: TSIcon },
+        { title: "React", SvgIcon: ReactIcon },
+        { title: "Next JS", SvgIcon: NextIcon },
+        { title: "React Native", SvgIcon: ReactIcon },
+        { title: "Tailwind CSS", SvgIcon: TailwindIcon },
+        { title: "Redux", SvgIcon: ReduxIcon },
+        { title: "Python", SvgIcon: PythonIcon },
+      ]
+    }
+
   return (
-    <div className="flex flex-col gap-4 mt-2">
-      <div className="flex flex-col gap-2">
-        <p className="text-2xl mb-2 heading-primary font-bold" id="Skills">
-          Skills
-        </p>
-        <div className='w-[75px] h-[4px] rounded-full bg-[#64ffda]' />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row flex-wrap gap-4 mt-4">
-          <IndividualSkill title={'Javascript'} SvgIcon={JSIcon} />
-          <IndividualSkill title={'Typescript'} SvgIcon={TSIcon} />
-          <IndividualSkill title={'C++'} SvgIcon={CppIcon} />
-          <IndividualSkill title={'Java'} SvgIcon={JavaIcon} />
-          <IndividualSkill title={'React'} SvgIcon={ReactIcon} />
-          <IndividualSkill title={'Next JS'} SvgIcon={NextIcon} />
-          <IndividualSkill title={'React Native'} SvgIcon={ReactIcon} />
-          <IndividualSkill title={'AWS'} SvgIcon={AwsIcon} />
-          {/* <IndividualSkill title={'Flutter'} SvgIcon={FlutterIcon} /> */}
-          <IndividualSkill title={'Tailwind CSS'} SvgIcon={TailwindIcon} />
-          <IndividualSkill title={'Redux'} SvgIcon={ReduxIcon} />
-          <IndividualSkill title={'NodeJs'} SvgIcon={NodejsIcon} />
-          <IndividualSkill title={'Python'} SvgIcon={PythonIcon} />
-          <IndividualSkill title={'Mongo DB'} SvgIcon={mongoDBIcon} />
-          <IndividualSkill title={'Postgres'} SvgIcon={PostgressIcon} />
-          <IndividualSkill title={'Prisma'} SvgIcon={PrismaIcon} />
-          <IndividualSkill title={'Git'} SvgIcon={gitIcon} />
+    <>
+      <p className="text-2xl heading-primary font-bold" id="Skills">
+        Skills
+      </p>
+      <div className='w-[75px] h-[4px] rounded-full bg-[#64ffda] mb-6' />
+      
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row flex-wrap gap-4">
+            {skillGroups.skills.map((skill, index) => (
+              <IndividualSkill key={`${index}`} title={skill.title} SvgIcon={skill.SvgIcon} />
+            ))}
+          </div>
         </div>
       </div>
-      {/* <div className="flex flex-col gap-2 mt-4">
-        <p className="text-2xl heading-primary font-bold">What I can Build</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <WhatICanBuild title={'Web Applications'} description={'I can build web applications using React, Next.js, and Tailwind CSS.'} SvgIcon={WebDevelopmentIcon} />
-          <WhatICanBuild title={'Mobile Applications'} description={'I can build mobile applications using React Native.'} SvgIcon={MobileDevelopmentIcon} />
-          <WhatICanBuild title={'Backend Applications'} description={'I can build backend applications using Node.js, Express, and MongoDB.'} SvgIcon={BackendDevelopmentIcon} />
-          <WhatICanBuild title={'Machine Learning'} description={'I can build Machine & Deep learning models using Python, Pytorch and TensorFlow.'} SvgIcon={MachineLearningIcon} />
-        </div> */}
-      {/* </div> */}
-    </div>
+    </>
   );
 }
 
@@ -80,8 +83,8 @@ export default function Skills() {
 function IndividualSkill({ title, SvgIcon }: { title: string, SvgIcon: () => React.JSX.Element }) {
   return (
     <div
-      className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] flex justify-start items-center lg:justify-center shadow-lg">
-      <div className="w-full h-full p-4 bg-neutral-900/80 rounded-lg flex  justify-start items-center lg:justify-center gap-2 shadow-lg">
+      className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] flex justify-start items-center lg:justify-center">
+      <div className="w-full h-full p-4 bg-neutral-900/80 rounded-lg flex  justify-start items-center lg:justify-center gap-2">
         <div className="w-7 h-7">
           <SvgIcon />
         </div>

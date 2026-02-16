@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image, { StaticImageData } from "next/image";
 import Clipcraft from "../../assets/clipcraft.png";
@@ -8,9 +8,9 @@ import VideoTranscoder from "../../assets/videoTranscoder.png";
 import YoutubenotesX from "../../assets/youtubenotesx.png";
 import WebsiteLink from "../icons/websiteLink";
 import LaserEyes from "../../assets/lasereyes.png";
-import DepthAi from "../../assets/depthai.png"
+import DepthAi from "../../assets/depthai.png";
 import AirpodsPro from "../../assets/airpodspro.png";
-import DaysofML from "../../assets/100daysofML.png"
+import DaysofML from "../../assets/100daysofML.png";
 import RAFTSLMRAG from "../../assets/RAFTSLMRAG.png";
 import { useState } from "react";
 export const projects: ProjectProps[] = [
@@ -44,13 +44,7 @@ export const projects: ProjectProps[] = [
     description: [
       "Turn any YouTube playlist into a personalized course, track progress and take detailed notes for deeper learning.",
     ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Supabase",
-      "Tailwind CSS",
-    ],
+    techStack: ["React", "TypeScript", "Node.js", "Supabase", "Tailwind CSS"],
     deployedLinks: [
       {
         title: "Website",
@@ -90,14 +84,8 @@ export const projects: ProjectProps[] = [
   },
   {
     name: "PackCheck",
-    description: [
-      "Web app to put text behind the main object in image",
-    ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-    ],
+    description: ["Web app to put text behind the main object in image"],
+    techStack: ["React", "TypeScript", "Tailwind CSS"],
     deployedLinks: [
       {
         title: "Website",
@@ -116,12 +104,7 @@ export const projects: ProjectProps[] = [
     description: [
       "Responsive Airpods Pro frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
     ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     deployedLinks: [
       {
         title: "Website",
@@ -165,13 +148,8 @@ export const projects: ProjectProps[] = [
   },
   {
     name: "100DaysofML",
-    description: [
-      "Notes for 100DaysofML playlist",
-    ],
-    techStack: [
-      "docusaurus",
-      "typescript"
-    ],
+    description: ["Notes for 100DaysofML playlist"],
+    techStack: ["docusaurus", "typescript"],
     deployedLinks: [
       {
         title: "Website",
@@ -239,12 +217,7 @@ export const projects: ProjectProps[] = [
     description: [
       "Responsive Starbucks frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
     ],
-    techStack: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     deployedLinks: [
       {
         title: "Website",
@@ -285,34 +258,44 @@ export default function Projects() {
   const categories = ["All", "Full Stack", "Frontend", "ML & DL"];
 
   return (
-    <div className="project-card flex flex-col gap-4">
-      <div className="flex flex-col gap-2">
-        <p className="text-2xl font-bold mb-2" id="Projects">
-          Projects
-        </p>
-        <div className="w-[75px] h-[6px] rounded-full bg-[#64ffda]" />
+    <>
+      <p className="text-2xl font-bold" id="Projects">
+        Projects
+      </p>
+      <div className="w-[75px] h-[4px] rounded-full bg-[#64ffda]" />
+      <div className="project-card flex flex-col gap-4">
+        <div className="flex flex-col gap-2"></div>
+        <ProjectTopBar
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          isDropdownOpen={isDropdownOpen}
+          setIsDropdownOpen={setIsDropdownOpen}
+          categories={categories}
+        />
+        <div className="flex flex-col gap-6 w-full">
+          {projects
+            .filter(
+              (project) =>
+                selectedCategory === "All" ||
+                project.category === selectedCategory,
+            )
+            .map((project, index) => (
+              <div
+                key={`index-${index}`}
+                className="flex flex-col w-full items-center justify-center"
+              >
+                <ProjectCard
+                  key={index}
+                  data={{
+                    ...project,
+                    description: project.description,
+                  }}
+                />
+              </div>
+            ))}
+        </div>
       </div>
-      <ProjectTopBar
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        isDropdownOpen={isDropdownOpen}
-        setIsDropdownOpen={setIsDropdownOpen}
-        categories={categories}
-      />
-      <div className="flex flex-col gap-6 w-full">
-        {projects.filter((project) => selectedCategory === "All" || project.category === selectedCategory).map((project, index) => (
-          <div key={`index-${index}`} className="flex flex-col w-full items-center justify-center"  >
-            <ProjectCard
-              key={index}
-              data={{
-                ...project,
-                description: project.description,
-              }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 }
 
@@ -325,9 +308,7 @@ export interface ProjectProps {
   category: string;
 }
 
-function ProjectCard({
-  data
-}: { data: ProjectProps }) {
+function ProjectCard({ data }: { data: ProjectProps }) {
   return (
     <div
       id="ProjectCard"
@@ -336,9 +317,15 @@ function ProjectCard({
       <div className="flex flex-col lg:flex-row gap-0 lg:gap-4 w-full bg-neutral-900/90 rounded-2xl shadow-lg">
         {/* Image Section */}
         <div className="w-full lg:w-2/5 flex-shrink-0">
-          <Image src={data.image} alt={data.name} width={300} height={250} className="rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none w-full h-56 lg:h-full object-cover select-none" />
+          <Image
+            src={data.image}
+            alt={data.name}
+            width={300}
+            height={250}
+            className="rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none w-full h-56 lg:h-full object-cover select-none"
+          />
         </div>
-        
+
         {/* Content Section */}
         <div className="flex flex-col justify-between p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1">
           <div className="flex flex-col gap-3">
@@ -350,7 +337,7 @@ function ProjectCard({
               ))}
             </ul>
           </div>
-          
+
           <div className="flex flex-col gap-3 mt-4">
             <div className="flex flex-row items-center gap-3 flex-wrap">
               {data.deployedLinks &&
@@ -365,18 +352,22 @@ function ProjectCard({
                     <div className="svg-icon">
                       <WebsiteLink />
                     </div>
-                    <p className="text-[#ffffff] text-websitelink text-sm">{link.title}</p>
+                    <p className="text-[#ffffff] text-websitelink text-sm">
+                      {link.title}
+                    </p>
                   </div>
                 ))}
             </div>
-            
+
             <div className="flex flex-row gap-1.5 flex-wrap">
               {data.techStack.map((individualStack, index) => (
                 <div
                   key={index}
                   className="rounded-full bg-gray-800 w-auto px-2 py-1"
                 >
-                  <p className="font-semibold text-teal-300 text-xs">{individualStack}</p>
+                  <p className="font-semibold text-teal-300 text-xs">
+                    {individualStack}
+                  </p>
                 </div>
               ))}
             </div>
@@ -392,13 +383,13 @@ function ProjectTopBar({
   setSelectedCategory,
   isDropdownOpen,
   setIsDropdownOpen,
-  categories
+  categories,
 }: {
-  selectedCategory: string,
-  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>,
-  isDropdownOpen: boolean,
-  setIsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>,
-  categories: string[]
+  selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+  isDropdownOpen: boolean;
+  setIsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  categories: string[];
 }) {
   return (
     <>
@@ -418,19 +409,28 @@ function ProjectTopBar({
 
       {/* Mobile Dropdown */}
       <div className="relative lg:hidden">
-        <div className={`flex flex-col p-[1px] rounded-lg bg-gradient-to-br ${isDropdownOpen ? "from-[#64ffda] via-teal-900 to-neutral-800" : "from-neutral-600 via-neutral-800 to-neutral-800" }`}>
+        <div
+          className={`flex flex-col p-[1px] rounded-lg bg-gradient-to-br ${isDropdownOpen ? "from-[#64ffda] via-teal-900 to-neutral-800" : "from-neutral-600 via-neutral-800 to-neutral-800"}`}
+        >
           <div
             className="flex flex-row items-center justify-between p-4 bg-neutral-900 rounded-lg cursor-pointer"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
-            <span className="text-md font-bold text-[#64ffda]">{selectedCategory}</span>
+            <span className="text-md font-bold text-[#64ffda]">
+              {selectedCategory}
+            </span>
             <svg
-              className={`w-5 h-5 text-white transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+              className={`w-5 h-5 text-white transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </div>
 
@@ -439,8 +439,11 @@ function ProjectTopBar({
               {categories.map((category) => (
                 <div
                   key={category}
-                  className={`p-3 cursor-pointer hover:bg-neutral-800 transition-colors duration-150 ${selectedCategory === category ? 'bg-neutral-800 text-[#64ffda]' : 'text-white'
-                    } ${category === categories[0] ? 'rounded-t-lg' : ''} ${category === categories[categories.length - 1] ? 'rounded-b-lg' : ''}`}
+                  className={`p-3 cursor-pointer hover:bg-neutral-800 transition-colors duration-150 ${
+                    selectedCategory === category
+                      ? "bg-neutral-800 text-[#64ffda]"
+                      : "text-white"
+                  } ${category === categories[0] ? "rounded-t-lg" : ""} ${category === categories[categories.length - 1] ? "rounded-b-lg" : ""}`}
                   onClick={() => {
                     setSelectedCategory(category);
                     setIsDropdownOpen(false);
@@ -454,5 +457,5 @@ function ProjectTopBar({
         </div>
       </div>
     </>
-  )
+  );
 }

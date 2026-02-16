@@ -70,7 +70,7 @@ const SideCard = () => {
           <div className='w-full flex gap-4 flex-col lg:items-center'>
             <div className={`flex`}>
               <div className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[0.75px] shadow-lg flex items-center justify-center">
-                <div className="px-4 py-1 rounded-lg bg-neutral-900/80 flex flex-row items-center cursor-pointer view-full-resume-archive" onClick={() => { window.open('https://drive.google.com/file/d/1ISytkgU5mWf_JHoEsGNx0uv9QLlt-D2N/view?usp=sharing', "mywindow"); }}>
+                <div className="px-4 py-1 rounded-lg bg-neutral-900/80 flex flex-row items-center cursor-pointer view-full-resume-archive" onClick={() => { window.open('https://drive.google.com/file/d/1F94SOYfOrFnGHgDEaYGpbnxWueAhHXv5/view?usp=sharing', "mywindow"); }}>
                   <p className="text-md font-bold text-[#64ffda]">View Resume</p>
                   <div className="resume-icon w-5 h-5"><ArrowIcon /></div>
                 </div>
