@@ -42,7 +42,7 @@ export const projects: ProjectProps[] = [
   {
     name: "YoutubenotesX",
     description: [
-      "Turn any YouTube playlist into a personalized course, track progress and take detailed notes for deeper learning.",
+      "Turn YouTube playlists into courses with progress tracking and notes.",
     ],
     techStack: ["React", "TypeScript", "Node.js", "Supabase", "Tailwind CSS"],
     deployedLinks: [
@@ -61,7 +61,7 @@ export const projects: ProjectProps[] = [
   {
     name: "RAFT SLM RAG",
     description: [
-      "Privacy-preserving, cost-efficient customer support assistant combining Edge AI with Cloud LLMs, achieving <b>90% cost reduction</b> and <b>10x token efficiency</b> through hierarchical RAG pipeline.",
+      "Edge + cloud support assistant with RAG, delivering <b>90% cost reduction</b> and <b>10x token efficiency</b>.",
     ],
     techStack: [
       "Python",
@@ -102,7 +102,7 @@ export const projects: ProjectProps[] = [
   {
     name: "AirpodsPro - Frontend",
     description: [
-      "Responsive Airpods Pro frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
+      "Responsive AirPods Pro clone built with React, TypeScript, Tailwind, and Framer Motion.",
     ],
     techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     deployedLinks: [
@@ -121,7 +121,7 @@ export const projects: ProjectProps[] = [
   {
     name: "PackCheck",
     description: [
-      "Web app that scans food barcodes and alerts users about allergens based on their allergies.",
+      "Scan food barcodes and get allergen alerts based on your profile.",
     ],
     techStack: [
       "React",
@@ -166,7 +166,7 @@ export const projects: ProjectProps[] = [
   {
     name: "Laser Eyes",
     description: [
-      "Fun image editor that adds laser eye effects to faces using MediaPipe and OpenCV.",
+      "Image editor that adds laser-eye effects using MediaPipe and OpenCV.",
     ],
     techStack: [
       "Streamlit",
@@ -192,7 +192,7 @@ export const projects: ProjectProps[] = [
   {
     name: "Video Transcoder",
     description: [
-      "Scalable video transcoding system using GCP and FFmpeg for multi-resolution output (360p-1080p).",
+      "Scalable GCP + FFmpeg transcoder for multi-resolution video output.",
     ],
     techStack: [
       "GCP",
@@ -215,7 +215,7 @@ export const projects: ProjectProps[] = [
   {
     name: "Starbucks - Frontend",
     description: [
-      "Responsive Starbucks frontend clone built with React, TypeScript, Tailwind CSS and Framer Motion.",
+      "Responsive Starbucks clone built with React, TypeScript, Tailwind, and Framer Motion.",
     ],
     techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     deployedLinks: [
@@ -309,52 +309,52 @@ function ProjectCard({
   return (
     <div
       id="ProjectCard"
-      className="rounded-2xl bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-100 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800 p-[1px] border-gray-200 dark:border-gray-800 shadow-sm w-full transition-all duration-300"
+      className="rounded-2xl bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-100 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800 p-[1px] border-gray-200 dark:border-gray-800 shadow-sm w-full h-[420px] sm:h-[450px] lg:h-[200px] transition-all duration-300 overflow-hidden"
     >
-      <div className="flex flex-col lg:flex-row gap-0 lg:gap-4 w-full bg-white dark:bg-neutral-900/90 rounded-2xl shadow-sm transition-all duration-300 overflow-hidden">
+      <div className="flex flex-col lg:flex-row gap-0 lg:gap-4 w-full h-full bg-white dark:bg-neutral-900/90 rounded-2xl shadow-sm transition-all duration-300 overflow-hidden">
         <div className="w-full lg:w-2/5 flex-shrink-0">
           <Image
             src={data.image}
             alt={data.name}
             width={420}
             height={260}
-            className="w-full h-44 sm:h-56 lg:h-full object-cover select-none"
+            className="w-full h-40 sm:h-48 lg:h-full object-cover select-none"
           />
         </div>
 
-        <div className="flex flex-col justify-between p-4 sm:p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1 gap-3">
-          <ul className="list-disc list-inside space-y-1.5 text-neutral-800 dark:text-neutral-200">
+        <div className="flex flex-col p-4 sm:p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1 gap-2 min-h-0">
+          <ul className="list-disc list-inside space-y-1 text-neutral-800 dark:text-neutral-200 max-h-[100px] sm:max-h-[118px] lg:max-h-[94px] overflow-hidden">
             {data.description.map((point, index) => (
-              <li key={`${index}-${point}`} className="text-sm sm:text-base lg:text-lg leading-relaxed">
+              <li key={`${index}-${point}`} className="text-sm sm:text-base lg:text-base leading-relaxed overflow-hidden [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical]">
                 {HighlightedText(point)}
               </li>
             ))}
           </ul>
 
           {data.deployedLinks && data.deployedLinks.length > 0 && (
-            <div className="flex flex-wrap items-center gap-3 sm:gap-5 mt-1">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-auto">
               {data.deployedLinks.map((link, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 cursor-pointer"
+                  className="flex items-center gap-1.5 cursor-pointer"
                   onClick={() => window.open(link.link, "mywindow")}
                 >
-                  <div className="svg-icon text-neutral-800 dark:text-white w-4 h-4">
+                  <div className="svg-icon text-neutral-800 dark:text-white w-3.5 h-3.5">
                     <WebsiteLink />
                   </div>
-                  <p className="text-sm sm:text-base lg:text-lg font-medium text-neutral-800 dark:text-white text-websitelink hover:text-[--accent]">{link.title}</p>
+                  <p className="text-xs sm:text-sm font-medium text-neutral-800 dark:text-white text-websitelink hover:text-[--accent]">{link.title}</p>
                 </div>
               ))}
             </div>
           )}
 
-          <div className="flex flex-row gap-2 flex-wrap mt-1">
+          <div className="flex flex-row gap-1.5 flex-wrap max-h-[56px] sm:max-h-[60px] overflow-hidden">
             {data.techStack.map((individualStack, index) => (
               <div
                 key={index}
-                className="rounded-full bg-[--accent-soft] px-3 py-1"
+                className="rounded-full bg-[--accent-soft] px-2.5 py-0.5"
               >
-                <p className="font-semibold text-accent text-xs sm:text-sm lg:text-base">{individualStack}</p>
+                <p className="font-bold text-accent sm:text-sm md:text-md">{individualStack}</p>
               </div>
             ))}
           </div>

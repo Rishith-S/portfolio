@@ -50,7 +50,7 @@ const SideCard = () => {
                     className="relative inline-block mt-2 mb-8 group cursor-pointer"
                 >
                     <span className="absolute inset-0 bg-accent transform -rotate-3 group-hover:rotate-0 transition-transform duration-200"></span>
-                    <span className="relative z-10 font-bold text-black px-2 text-lg">View Resume</span>
+                    <span className="relative z-10 font-bold text-white dark:text-black px-2 text-lg">View Resume</span>
                 </a>
 
                 <div className="flex gap-5 items-center justify-center w-full pb-2">

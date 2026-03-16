@@ -227,7 +227,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
                   <div className="text-neutral-800 dark:text-white">
                     <WebsiteLink />
                   </div>
-                  <p className="text-sm md:text-base text-websitelink text-neutral-800 dark:text-[#ffffff]">
+                  <p className="text-sm md:text-md text-websitelink text-neutral-800 dark:text-[#ffffff]">
                     {link.title}
                   </p>
                 </div>
@@ -239,7 +239,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
                 key={index}
                 className="rounded-full bg-[--accent-soft] dark:bg-gray-800 w-auto px-2 py-1 transition-colors duration-300"
               >
-                <p className="text-sm md:text-base font-bold text-accent">{individualStack}</p>
+                <p className="text-sm md:text-md font-bold text-accent">{individualStack}</p>
               </div>
             ))}
           </div>

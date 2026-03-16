@@ -27,51 +27,53 @@ function ProjectCard({
   return (
     <div
       id="ProjectCard"
-      className="rounded-3xl experience-card cursor-pointer border-2 border-gray-800 w-full"
+      className="rounded-3xl experience-card cursor-pointer border-2 border-gray-800 w-full h-[390px] sm:h-[420px] flex flex-col overflow-hidden"
     >
       <Image
         src={data.image}
         alt={data.name}
         width={400}
         height={200}
-        className="rounded-t-3xl object-cover w-full h-40 sm:h-48 select-none"
+        className="rounded-t-3xl object-cover w-full h-32 sm:h-36 select-none"
       />
 
-      <div className="p-3 sm:p-4 flex md:flex-col gap-2">
-        <div className="flex fle md:flex-col items-center justify-center gap-2 w-full">
+      <div className="p-3 sm:p-4 flex flex-col gap-3 flex-1 min-h-0">
+        <div className="flex flex-col gap-2 w-full min-h-0">
           <p className="text-base sm:text-lg font-bold text-hover">{data.name} &nbsp;</p>
-          <ul className={"list-disc list-inside"}>
+          <ul className={"list-disc list-inside space-y-1 max-h-[88px] overflow-hidden"}>
             {data.description.map((point, index) => (
-              <li key={`${index}-${point}`} className="text-sm sm:text-[15px] text-[#ffffff] text-justify">
+              <li key={`${index}-${point}`} className="text-sm sm:text-[15px] text-[#ffffff] text-justify overflow-hidden [display:-webkit-box] [-webkit-line-clamp:3] [-webkit-box-orient:vertical]">
                 {point}
               </li>
             ))}
           </ul>
         </div>
-        <div className="flex flex-row items-center gap-2">
-          {data.deployedLinks &&
-            data.deployedLinks.map((link, index) => (
+        <div className="mt-auto flex flex-col gap-2">
+          <div className="flex flex-row items-center gap-2 flex-wrap">
+            {data.deployedLinks &&
+              data.deployedLinks.map((link, index) => (
+                <div
+                  key={index}
+                  className="flex flex-row items-center gap-2 link-div cursor-pointer"
+                  onClick={() => {
+                    window.open(link.link, "mywindow");
+                  }}
+                >
+                  <WebsiteLink />
+                  <p className="text-websitelink text-[#ffffff] text-sm">{link.title}</p>
+                </div>
+              ))}
+          </div>
+          <div className="flex flex-row gap-2 flex-wrap max-h-[72px] overflow-hidden">
+            {data.techStack.map((individualStack, index) => (
               <div
                 key={index}
-                className="flex flex-row items-center gap-2 link-div cursor-pointer"
-                onClick={() => {
-                  window.open(link.link, "mywindow");
-                }}
+                className="rounded-full bg-gray-800 w-auto px-2 py-1"
               >
-                <WebsiteLink />
-                <p className="text-websitelink text-[#ffffff] text-sm">{link.title}</p>
+                <p className="font-semibold text-accent text-xs">{individualStack}</p>
               </div>
             ))}
-        </div>
-        <div className="flex flex-row gap-2 flex-wrap">
-          {data.techStack.map((individualStack, index) => (
-            <div
-              key={index}
-              className="rounded-full bg-gray-800 w-auto px-2 py-1"
-            >
-              <p className="font-semibold text-accent text-xs">{individualStack}</p>
-            </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>
