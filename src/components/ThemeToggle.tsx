@@ -31,7 +31,7 @@ const ThemeToggle = ({ className = '' }: { className?: string }) => {
   };
 
   return (
-    <div className='pl-4'>
+    <div className='ml-0 md:ml-6'>
       <button
         onClick={handleThemeToggle}
         disabled={isSwitching}

@@ -271,8 +271,7 @@ export default function Projects() {
         </p>
         <div className="w-full h-[4px] rounded-full bg-accent" />
       </div>
-      <div className="project-card flex flex-col gap-4">
-        <div className="flex flex-col gap-2"></div>
+      <div className="project-card mt-4 flex flex-col gap-4">
         <ProjectTopBar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
@@ -323,8 +322,8 @@ function ProjectCard({
           />
         </div>
 
-        <div className="flex flex-col justify-between p-4 sm:p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1">
-          <ul className="list-disc list-inside space-y-2 text-neutral-800 dark:text-neutral-200">
+        <div className="flex flex-col justify-between p-4 sm:p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1 gap-3">
+          <ul className="list-disc list-inside space-y-1.5 text-neutral-800 dark:text-neutral-200">
             {data.description.map((point, index) => (
               <li key={`${index}-${point}`} className="text-sm sm:text-base lg:text-lg leading-relaxed">
                 {HighlightedText(point)}
@@ -333,7 +332,7 @@ function ProjectCard({
           </ul>
 
           {data.deployedLinks && data.deployedLinks.length > 0 && (
-            <div className="flex flex-wrap items-center gap-3 sm:gap-5 mt-4">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-5 mt-1">
               {data.deployedLinks.map((link, index) => (
                 <div
                   key={index}
@@ -349,7 +348,7 @@ function ProjectCard({
             </div>
           )}
 
-          <div className="flex flex-row gap-2 flex-wrap mt-4">
+          <div className="flex flex-row gap-2 flex-wrap mt-1">
             {data.techStack.map((individualStack, index) => (
               <div
                 key={index}

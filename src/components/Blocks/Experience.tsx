@@ -136,13 +136,12 @@ export default function Experience() {
   return (
     <>
       <div className="inline-flex w-fit flex-col">
-        <p id="Experience" className="text-2xl heading-primary font-bold text-black dark:text-white">
+        <p id="Experience" className="text-xl md:text-2xl heading-primary font-bold text-black dark:text-white">
           Experience
         </p>
         <div className="w-full h-[4px] rounded-full bg-accent" />
       </div>
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2"></div>
+      <div className="mt-4 flex flex-col gap-4">
         {experiences.map((individualExperience, index) => (
           <ExperienceCard key={index} data={individualExperience} />
         ))}
@@ -168,16 +167,15 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
       className="rounded-3xl bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-100 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800 p-[1px] border-gray-200 dark:border-gray-800 experience-card cursor-pointer transition-all duration-300"
       onClick={() => window.open(data.companyWebsite, "mywindow")}
     >
-      <div className="flex flex-col gap-4 w-full h-full bg-white dark:bg-neutral-900/80 rounded-3xl p-4 md:p-6 shadow-sm transition-all duration-300">
+      <div className="flex flex-col gap-3 w-full h-full bg-white dark:bg-neutral-900/80 rounded-3xl p-4 md:p-6 shadow-sm transition-all duration-300">
         <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-[100%]">
           <div className="flex flex-row items-start justify-start md:items-center md:justify-center gap-4">
-            <div className="w-12 h-12 bg-white rounded-xl justify-start items-start border border-neutral-200 dark:border-none">
+            <div className="relative w-12 h-12 flex-shrink-0 bg-white rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden">
               <Image
                 src={data.imageLogo}
-                alt="eksaq"
-                width={100}
-                height={100}
-                className="rounded-md select-none"
+                alt={data.name}
+                fill
+                className="object-contain select-none rounded-xl"
               />
             </div>
             <div>
@@ -206,9 +204,9 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
         </div>
 
         <div>
-          <ul className={"list-disc list-inside md:mt-2 text-neutral-700 dark:text-neutral-300"}>
+          <ul className={"list-disc list-inside md:mt-2 text-neutral-700 dark:text-neutral-300 space-y-1"}>
             {data.description.map((point, index) => (
-              <li key={index} className="text-md">
+              <li key={index} className="text-sm md:text-base">
                 {HighlightedText(point)}
               </li>
             ))}
@@ -229,7 +227,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
                   <div className="text-neutral-800 dark:text-white">
                     <WebsiteLink />
                   </div>
-                  <p className="text-websitelink text-neutral-800 dark:text-[#ffffff]">
+                  <p className="text-sm md:text-base text-websitelink text-neutral-800 dark:text-[#ffffff]">
                     {link.title}
                   </p>
                 </div>
@@ -241,7 +239,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
                 key={index}
                 className="rounded-full bg-[--accent-soft] dark:bg-gray-800 w-auto px-2 py-1 transition-colors duration-300"
               >
-                <p className="font-bold text-accent">{individualStack}</p>
+                <p className="text-sm md:text-base font-bold text-accent">{individualStack}</p>
               </div>
             ))}
           </div>

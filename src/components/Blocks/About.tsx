@@ -9,7 +9,7 @@ export default function About() {
         <div className="inline-flex w-fit flex-col">
           <p
             className="text-xl lg:text-2xl heading-primary font-bold text-black dark:text-white"
-            id="education"
+            id="about"
           >
             About
           </p>
@@ -18,7 +18,7 @@ export default function About() {
         <div className="flex flex-col p-[1px] rounded-lg my-4 bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-100 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800">
           <div className="flex flex-col p-4 rounded-lg bg-white dark:bg-neutral-900/95 shadow-sm">
             <p className="text-md text-neutral-800 dark:text-neutral-200 lg:hidden">
-              Yoo, this is Rishith. I like building cool stuff using
+              Hi, this is Rishith. I like building cool stuff using
               <span className="font-bold text-blue-500"> Go</span>,
               <span className="inline-flex items-center gap-1 mx-1 align-[1px]">
                 <TechBadge variant="ts">Ts</TechBadge>
@@ -30,8 +30,8 @@ export default function About() {
             </p>
             <div className="hidden lg:block lg:text-[16px] text-neutral-800 dark:text-neutral-200 space-y-4">
               <p>
-                Yoo,<br />
-                This is Rishith. I like building cool stuff using
+                Hi,<br />
+                This is Rishith. I like building stuff using
                 <span className="font-bold text-blue-500"> Go</span>,
                 <span className="inline-flex items-center gap-1 mx-1 align-[1px]">
                   <TechBadge variant="ts">Ts</TechBadge>
@@ -78,7 +78,7 @@ export default function About() {
               alt="San Jose State University"
               width={125}
               height={125}
-              className="rounded-full border-2 border-neutral-200 dark:border-neutral-700 select-none"
+              className="rounded-full border-2 hidden md:flex border-neutral-200 dark:border-neutral-700 select-none"
             />
           </div>
           <div className="text-[14px] md:text-[16px]">
@@ -88,8 +88,8 @@ export default function About() {
               <br className="md:hidden" /> San Jose, CA
             </p>
             <p className="font-semibold text-neutral-600 dark:text-neutral-400">
-              Expected Graduation : <br className="md:hidden" />
-              December 2026
+              <span className="hidden md:inline">Expected Graduation</span>
+              <span className="inline md:hidden">Exp. Grad</span>: Dec 2026
             </p>
             <p className="font-semibold text-neutral-600 dark:text-neutral-400">GPA: 3.5 / 4.0</p>
           </div>

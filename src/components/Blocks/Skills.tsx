@@ -14,15 +14,13 @@ import PostgressIcon from "../icons/postgressIcon";
 import gitIcon from "../icons/gitIcon";
 import AwsIcon from "../icons/awsIcon";
 import PrismaIcon from "../icons/prismaIcon";
-// import WebDevelopmentIcon from "../icons/webDevelopment";
-// import MobileDevelopmentIcon from "../icons/mobileDevelopment";
-// import BackendDevelopmentIcon from "../icons/backendDevelopment";
-// import MachineLearningIcon from "../icons/machineLearningIcon";
+import GolangIcon from "../icons/golangIcon";
 
 export default function Skills() {
   const skillGroups = {
     title: "Backend & Systems",
     skills: [
+      { title: "Go", SvgIcon: GolangIcon },
       { title: "C++", SvgIcon: CppIcon },
       { title: "Java", SvgIcon: JavaIcon },
       { title: "NodeJs", SvgIcon: NodejsIcon },
@@ -46,7 +44,7 @@ export default function Skills() {
     <div>
       <div className="inline-flex w-fit flex-col">
         <p
-          className="text-2xl heading-primary font-bold text-black dark:text-white"
+          className="text-xl md:text-2xl heading-primary font-bold text-black dark:text-white"
           id="Skills"
         >
           Skills
@@ -55,7 +53,7 @@ export default function Skills() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-1.5 md:flex md:flex-wrap md:gap-2">
           {skillGroups.skills.map((skill, index) => (
             <IndividualSkill
               key={`${index}`}
@@ -69,22 +67,6 @@ export default function Skills() {
   );
 }
 
-// function WhatICanBuild({ title, description, SvgIcon }: { title: string, description: string, SvgIcon: () => React.JSX.Element }) {
-//   return (
-//     <div className="rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] flex items-start justify-start lg:items-center lg:justify-center shadow-lg">
-//       <div className="flex flex-row gap-6 w-full h-full bg-neutral-900/80 rounded-lg p-6">
-//         <div className="w-12 h-12">
-//           <SvgIcon />
-//         </div>
-//         <div className="flex flex-col gap-2">
-//           <p className="font-bold text-[#ffffff] text-lg">{title}</p>
-//           <p className="text-[#ffffff] text-md">{description}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 function IndividualSkill({
   title,
   SvgIcon,
@@ -93,11 +75,11 @@ function IndividualSkill({
   SvgIcon: () => React.JSX.Element;
 }) {
   return (
-    <div className="inline-flex items-center gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800/80 px-4 py-2">
-      <div className="w-6 h-6 text-neutral-800 dark:text-white flex items-center justify-center">
+    <div className="flex w-full items-center gap-2 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800/80 px-3 py-2 md:w-auto md:gap-3 md:px-4">
+      <div className="w-5 h-5 md:w-6 md:h-6 text-neutral-800 dark:text-white flex items-center justify-center shrink-0">
         <SvgIcon />
       </div>
-      <p className="font-medium text-neutral-900 dark:text-white">{title}</p>
+      <p className="font-medium text-[13px] leading-none md:text-base text-neutral-900 dark:text-white truncate">{title}</p>
     </div>
   );
 }
