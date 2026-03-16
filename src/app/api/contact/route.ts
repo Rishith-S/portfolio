@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     }
 
     const html = `
-      <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height:1.6">
+      <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace; line-height:1.6">
         <h2 style="margin:0 0 8px">New message from ${name}</h2>
         <p><strong>From:</strong> ${name} &lt;${email}&gt;</p>
         <p><strong>Subject:</strong> ${subject}</p>

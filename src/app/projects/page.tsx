@@ -69,7 +69,7 @@ function ProjectCard({
               key={index}
               className="rounded-full bg-gray-800 w-auto px-2 py-1"
             >
-              <p className="font-semibold text-teal-300 text-xs">{individualStack}</p>
+              <p className="font-semibold text-accent text-xs">{individualStack}</p>
             </div>
           ))}
         </div>

@@ -1,12 +1,22 @@
-import React from 'react'
 
-const Navbar = ({currentSection, setCurrentSection }: { currentSection:number, setCurrentSection:React.Dispatch<React.SetStateAction<number>> }) => {
+const Navbar = ({currentSection, onSectionChange }: { currentSection:number, onSectionChange:(sectionIndex: number) => void }) => {
+    const sections = ["About", "Experience", "Projects", "Contact"];
+  
   return (
-    <div className="rounded-t-3xl  md:rounded-none flex flex-row gap-8 text-[#ffffff] font-semibold select-none">
-        <p className={`cursor-pointer ${currentSection === 0 ? 'text-[#64ffda]' : 'text-[#ffffff]'}`} onClick={() => setCurrentSection(0)}>About</p>
-        <p className={`cursor-pointer ${currentSection === 1 ? 'text-[#64ffda]' : 'text-[#ffffff]'}`} onClick={() => setCurrentSection(1)}>Experience</p>
-        <p className={`cursor-pointer ${currentSection === 2 ? 'text-[#64ffda]' : 'text-[#ffffff]'}`} onClick={() => setCurrentSection(2)}>Projects</p>
-        <p className={`cursor-pointer ${currentSection === 3 ? 'text-[#64ffda]' : 'text-[#ffffff]'}`} onClick={() => setCurrentSection(3)}>Contact</p>
+    <div className="rounded-t-3xl md:rounded-none flex flex-row w-full justify-evenly md:flex md:w-auto md:gap-8 items-center font-semibold select-none">
+        {sections.map((section, index) => (
+            <p 
+                key={section}
+                className={`text-center text-sm md:text-base md:text-left py-1 md:py-0 cursor-pointer transition-colors duration-200 ${
+                    currentSection === index 
+                        ? 'text-accent'
+                        : 'text-neutral-500 dark:text-neutral-400 hover:text-accent'
+                }`} 
+                onClick={() => onSectionChange(index)}
+            >
+                {section}
+            </p>
+        ))}
     </div>
   )
 }

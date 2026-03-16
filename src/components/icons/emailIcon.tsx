@@ -7,9 +7,9 @@ const EmailIcon = () => {
                 <title>Mail</title>
                 <rect x="48" y="96" width="416" height="320" rx="40" ry="40" 
                       strokeLinecap="round" strokeLinejoin="round" 
-                      stroke="#64ffda" strokeWidth="16" fill="none"/>
+                      stroke="currentColor" strokeWidth="16" fill="none"/>
                 <path strokeLinecap="round" strokeLinejoin="round" 
-                      stroke="#64ffda" strokeWidth="16" fill="none"
+                      stroke="currentColor" strokeWidth="16" fill="none"
                       d="M112 160l144 112 144-112"/>
             </svg>        
         </div>

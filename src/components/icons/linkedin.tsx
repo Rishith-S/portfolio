@@ -7,10 +7,10 @@ const IconLinkedin = () => (
     viewBox="0,0,256,256"
     width="100%"
     height="100%"
-    className="bg-white  border-4 border-white  rounded-md"
+    className=""
   >
     <g
-      fill="#000000"
+      fill="currentColor"
       fillRule="nonzero"
       stroke="none"
       strokeWidth="1"

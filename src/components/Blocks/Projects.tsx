@@ -83,7 +83,7 @@ export const projects: ProjectProps[] = [
     category: "ML & DL",
   },
   {
-    name: "PackCheck",
+    name: "DephtAI",
     description: ["Web app to put text behind the main object in image"],
     techStack: ["React", "TypeScript", "Tailwind CSS"],
     deployedLinks: [
@@ -237,13 +237,13 @@ export const HighlightedText = (text: string) => {
   const formattedText = text.split(/(<b>.*?<\/b>)/).map((part, index) => {
     if (part.startsWith("<b>") && part.endsWith("</b>")) {
       return (
-        <span key={index} className="font-bold text-sm text-[#ffffff]">
+        <span key={index} className="font-bold text-sm md:text-base text-black dark:text-[#ffffff]">
           {part.replace("<b>", "").replace("</b>", "")}
         </span>
       );
     }
     return (
-      <span key={index} className="text-sm w-full text-[#ffffff]">
+      <span key={index} className="text-sm md:text-base w-full text-neutral-800 dark:text-[#ffffff]">
         {part}
       </span>
     );
@@ -257,12 +257,20 @@ export default function Projects() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const categories = ["All", "Full Stack", "Frontend", "ML & DL"];
 
+  const filteredProjects = projects.filter(
+    (project) =>
+      selectedCategory === "All" ||
+      project.category === selectedCategory,
+  );
+
   return (
     <>
-      <p className="text-2xl font-bold" id="Projects">
-        Projects
-      </p>
-      <div className="w-[75px] h-[4px] rounded-full bg-[#64ffda]" />
+      <div className="inline-flex w-fit flex-col">
+        <p className="text-xl md:text-2xl font-bold text-black dark:text-white" id="Projects">
+          Projects
+        </p>
+        <div className="w-full h-[4px] rounded-full bg-accent" />
+      </div>
       <div className="project-card flex flex-col gap-4">
         <div className="flex flex-col gap-2"></div>
         <ProjectTopBar
@@ -273,26 +281,12 @@ export default function Projects() {
           categories={categories}
         />
         <div className="flex flex-col gap-6 w-full">
-          {projects
-            .filter(
-              (project) =>
-                selectedCategory === "All" ||
-                project.category === selectedCategory,
-            )
-            .map((project, index) => (
-              <div
-                key={`index-${index}`}
-                className="flex flex-col w-full items-center justify-center"
-              >
-                <ProjectCard
-                  key={index}
-                  data={{
-                    ...project,
-                    description: project.description,
-                  }}
-                />
-              </div>
-            ))}
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={`index-${index}`}
+              data={project}
+            />
+          ))}
         </div>
       </div>
     </>
@@ -308,69 +302,62 @@ export interface ProjectProps {
   category: string;
 }
 
-function ProjectCard({ data }: { data: ProjectProps }) {
+function ProjectCard({
+  data,
+}: {
+  data: ProjectProps;
+}) {
   return (
     <div
       id="ProjectCard"
-      className="rounded-2xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] border-gray-800 experience-card cursor-pointer shadow-lg w-full"
+      className="rounded-2xl bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-100 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800 p-[1px] border-gray-200 dark:border-gray-800 shadow-sm w-full transition-all duration-300"
     >
-      <div className="flex flex-col lg:flex-row gap-0 lg:gap-4 w-full bg-neutral-900/90 rounded-2xl shadow-lg">
-        {/* Image Section */}
+      <div className="flex flex-col lg:flex-row gap-0 lg:gap-4 w-full bg-white dark:bg-neutral-900/90 rounded-2xl shadow-sm transition-all duration-300 overflow-hidden">
         <div className="w-full lg:w-2/5 flex-shrink-0">
           <Image
             src={data.image}
             alt={data.name}
-            width={300}
-            height={250}
-            className="rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none w-full h-56 lg:h-full object-cover select-none"
+            width={420}
+            height={260}
+            className="w-full h-44 sm:h-56 lg:h-full object-cover select-none"
           />
         </div>
 
-        {/* Content Section */}
-        <div className="flex flex-col justify-between p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1">
-          <div className="flex flex-col gap-3">
-            <ul className={"list-disc list-inside space-y-1"}>
-              {data.description.map((point, index) => (
-                <li key={`${index}-${point}`} className="text-sm lg:text-sm">
-                  {HighlightedText(point)}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="flex flex-col justify-between p-4 sm:p-5 lg:py-4 lg:pr-5 lg:pl-0 flex-1">
+          <ul className="list-disc list-inside space-y-2 text-neutral-800 dark:text-neutral-200">
+            {data.description.map((point, index) => (
+              <li key={`${index}-${point}`} className="text-sm sm:text-base lg:text-lg leading-relaxed">
+                {HighlightedText(point)}
+              </li>
+            ))}
+          </ul>
 
-          <div className="flex flex-col gap-3 mt-4">
-            <div className="flex flex-row items-center gap-3 flex-wrap">
-              {data.deployedLinks &&
-                data.deployedLinks.map((link, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-row items-center gap-2 link-div cursor-pointer"
-                    onClick={() => {
-                      window.open(link.link, "mywindow");
-                    }}
-                  >
-                    <div className="svg-icon">
-                      <WebsiteLink />
-                    </div>
-                    <p className="text-[#ffffff] text-websitelink text-sm">
-                      {link.title}
-                    </p>
-                  </div>
-                ))}
-            </div>
-
-            <div className="flex flex-row gap-1.5 flex-wrap">
-              {data.techStack.map((individualStack, index) => (
+          {data.deployedLinks && data.deployedLinks.length > 0 && (
+            <div className="flex flex-wrap items-center gap-3 sm:gap-5 mt-4">
+              {data.deployedLinks.map((link, index) => (
                 <div
                   key={index}
-                  className="rounded-full bg-gray-800 w-auto px-2 py-1"
+                  className="flex items-center gap-2 cursor-pointer"
+                  onClick={() => window.open(link.link, "mywindow")}
                 >
-                  <p className="font-semibold text-teal-300 text-xs">
-                    {individualStack}
-                  </p>
+                  <div className="svg-icon text-neutral-800 dark:text-white w-4 h-4">
+                    <WebsiteLink />
+                  </div>
+                  <p className="text-sm sm:text-base lg:text-lg font-medium text-neutral-800 dark:text-white text-websitelink hover:text-[--accent]">{link.title}</p>
                 </div>
               ))}
             </div>
+          )}
+
+          <div className="flex flex-row gap-2 flex-wrap mt-4">
+            {data.techStack.map((individualStack, index) => (
+              <div
+                key={index}
+                className="rounded-full bg-[--accent-soft] px-3 py-1"
+              >
+                <p className="font-semibold text-accent text-xs sm:text-sm lg:text-base">{individualStack}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -393,12 +380,12 @@ function ProjectTopBar({
 }) {
   return (
     <>
-      <div className="hidden lg:flex flex-col p-[1px] rounded-lg bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800">
-        <div className="flex flex-row gap-4 p-4 bg-neutral-900/90 rounded-lg">
+      <div className="hidden lg:flex flex-col p-[1px] rounded-lg bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-200 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800">
+        <div className="flex flex-row gap-4 p-4 bg-white dark:bg-neutral-900/90 rounded-lg">
           {categories.map((category) => (
             <p
               key={category}
-              className={`text-md font-bold cursor-pointer ${selectedCategory === category ? "text-[#64ffda]" : "text-white"}`}
+              className={`text-sm xl:text-base font-bold cursor-pointer transition-colors duration-200 ${selectedCategory === category ? "text-accent" : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"}`}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
@@ -410,17 +397,17 @@ function ProjectTopBar({
       {/* Mobile Dropdown */}
       <div className="relative lg:hidden">
         <div
-          className={`flex flex-col p-[1px] rounded-lg bg-gradient-to-br ${isDropdownOpen ? "from-[#64ffda] via-teal-900 to-neutral-800" : "from-neutral-600 via-neutral-800 to-neutral-800"}`}
+          className={`flex flex-col p-[1px] rounded-lg bg-gradient-to-br ${isDropdownOpen ? "from-accent via-accent to-neutral-200 dark:to-neutral-800" : "from-neutral-200 via-neutral-100 to-neutral-200 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800"}`}
         >
           <div
-            className="flex flex-row items-center justify-between p-4 bg-neutral-900 rounded-lg cursor-pointer"
+            className="flex flex-row items-center justify-between p-4 bg-white dark:bg-neutral-900 rounded-lg cursor-pointer"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
-            <span className="text-md font-bold text-[#64ffda]">
+            <span className="text-sm sm:text-base font-bold text-accent">
               {selectedCategory}
             </span>
             <svg
-              className={`w-5 h-5 text-white transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
+              className={`w-5 h-5 text-neutral-800 dark:text-white transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -435,21 +422,21 @@ function ProjectTopBar({
           </div>
 
           {isDropdownOpen && (
-            <div className="absolute top-full left-0 right-0 mt-1 bg-neutral-900 rounded-lg border border-neutral-700 z-10 shadow-lg">
-              {categories.map((category) => (
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-700 z-10 shadow-lg">
+              {categories.map((category, index) => (
                 <div
                   key={category}
-                  className={`p-3 cursor-pointer hover:bg-neutral-800 transition-colors duration-150 ${
+                  className={`p-3 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-150 ${
                     selectedCategory === category
-                      ? "bg-neutral-800 text-[#64ffda]"
-                      : "text-white"
-                  } ${category === categories[0] ? "rounded-t-lg" : ""} ${category === categories[categories.length - 1] ? "rounded-b-lg" : ""}`}
+                        ? "bg-neutral-100 dark:bg-neutral-800 text-accent"
+                      : "text-neutral-800 dark:text-white"
+                  } ${index === 0 ? "rounded-t-lg" : ""} ${index === categories.length - 1 ? "rounded-b-lg" : ""}`}
                   onClick={() => {
                     setSelectedCategory(category);
                     setIsDropdownOpen(false);
                   }}
                 >
-                  <span className="text-md font-medium">{category}</span>
+                  <span className="text-sm sm:text-base font-medium">{category}</span>
                 </div>
               ))}
             </div>

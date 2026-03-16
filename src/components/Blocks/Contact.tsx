@@ -48,10 +48,12 @@ const Contact = () => {
 
   return (
     <>
-      <p className="text-2xl font-bold" id="Contact">
-        Contact
-      </p>
-      <div className="w-[75px] h-[4px] rounded-full bg-[#64ffda]" />
+      <div className="inline-flex w-fit flex-col">
+        <p className="text-2xl font-bold text-black dark:text-white" id="Contact">
+          Contact
+        </p>
+        <div className="w-full h-[4px] rounded-full bg-accent" />
+      </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2"></div>
         <div className="flex flex-col gap-4">
@@ -78,15 +80,15 @@ const Contact = () => {
                 placeholder="Message"
                 value={message}
                 onChange={handleMessageChange}
-                className={`rounded-xl border-[1px] border-neutral-700 bg-neutral-900/80 cursor-pointer p-4 w-full h-full focus:outline-none resize-none ${message ? "focus:border-[#64ffda]" : "focus:border-red-500"}`}
+                className={`rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900/80 cursor-pointer p-4 w-full h-full focus:outline-none resize-none text-neutral-800 dark:text-white ${message ? "focus:border-accent" : "focus:border-red-500"}`}
                 style={{ textAlign: "left", verticalAlign: "top" }}
               />
             </div>
             <div className="flex flex-row items-center justify-end">
-              <div className="rounded-xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1.25px] shadow-lg flex items-center justify-center">
+              <div className="rounded-xl bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-100 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800 p-[1.25px] shadow-lg flex items-center justify-center transition-all duration-300">
                 <button
                   type="submit"
-                  className="rounded-xl font-semibold text-[#64ffda] bg-neutral-900/80 flex flex-row gap-2 items-center cursor-pointer p-4 w-full h-full focus:outline-none"
+                  className="rounded-xl font-semibold text-accent bg-white dark:bg-neutral-900/80 flex flex-row gap-2 items-center cursor-pointer p-4 w-full h-full focus:outline-none transition-colors duration-300"
                 >
                   {" "}
                   <div className="w-5 h-5">
@@ -99,7 +101,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      ;
     </>
   );
 };
@@ -119,7 +120,7 @@ function InputBox({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className={`rounded-xl border-[1px] border-neutral-700 bg-neutral-900/80 cursor-pointer p-4 w-full h-full focus:outline-none ${value ? "focus:border-[#64ffda]" : "focus:border-red-500"} placeholder:text-left`}
+      className={`rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900/80 cursor-pointer p-4 w-full h-full focus:outline-none text-neutral-800 dark:text-white ${value ? "focus:border-accent" : "focus:border-red-500"} placeholder:text-left`}
       style={{ textAlign: "left" }}
     />
   );

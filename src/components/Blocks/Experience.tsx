@@ -12,11 +12,11 @@ const experiences = [
     duration: "Jun 2024 - Jan 2025",
     companyWebsite: "https://eksaq.in",
     description: [
-      "Developed a cross-platform React/React Native cross-platform learning platform that scaled to 10,000+ monthly active students, resolving performance bottlenecks to ensure reliable access across devices.",
-      "Integrated Azure Speech Services on AWS EC2 for real-time pronunciation scoring, boosting engagement by 2.4x.",
-      "Containerized backend on AWS ECS and redesigned into microservices, cutting LMS load time by 50%+ and enabling smoother student workflows.",
-      "Migrated from WordPress/Moodle to AWS ECS + Amplify, reducing infrastructure expenses by 30% while improving scalability and reliability.",
-      "Contributed to system architecture design and authored detail oriented technical & API documentation for scalable deployment, accelerating engineer onboarding and enhancing collaboration.",
+      "Developed a cross-platform <b>React/React Native</b> learning platform that scaled to <b>10,000+ monthly active students</b>, resolving performance bottlenecks to ensure reliable access across devices.",
+      "Integrated <b>Azure Speech Services</b> on <b>AWS EC2</b> for real-time pronunciation scoring, boosting engagement by <b>2.4x</b>.",
+      "Containerized backend on <b>AWS ECS</b> and redesigned into <b>microservices</b>, cutting LMS load time by <b>50%+</b> and enabling smoother student workflows.",
+      "Migrated from <b>WordPress/Moodle</b> to <b>AWS ECS + Amplify</b>, reducing infrastructure expenses by <b>30%</b> while improving scalability and reliability.",
+      "Contributed to <b>system architecture design</b> and authored detailed <b>technical & API documentation</b> for scalable deployment, accelerating engineer onboarding and enhancing collaboration.",
     ],
     imageLogo: EksaqLogo,
     techStack: [
@@ -51,8 +51,8 @@ const experiences = [
     duration: "Sep 2025 - Dec 2025",
     companyWebsite: "https://www.ai-ml-club-sjsu.com/about",
     description: [
-      "Implemented a check-in feature allowing PR members to attend events using attendance codes.",
-      "Resolved multiple frontend bugs to improve user experience and application stability.",
+      "Implemented a <b>check-in feature</b> allowing PR members to attend events using attendance codes.",
+      "Resolved multiple <b>frontend bugs</b> to improve user experience and application stability.",
     ],
     imageLogo: AimlclubSjsu,
     techStack: ["Typescript", "Supabase", "Postgres", "NextJS"],
@@ -69,10 +69,10 @@ const experiences = [
     duration: "Oct 2023 - May 2024",
     companyWebsite: "https://eksaq.in",
     description: [
-      "Launched an LMS using React + Supabase, enabling 1,000+ staff to complete mandatory training.",
-      "Designed secure workflows with Supabase Auth + PostgreSQL, streamlining certification tracking and ensuring compliance.",
-      "Optimized Supabase Buckets with signed URL access, reducing file latency by 40%.",
-      "Performed software testing and applied debugging techniques, ensuring application reliability and quicker issue resolution.",
+      "Launched an LMS using <b>React + Supabase</b>, enabling <b>1,000+ staff</b> to complete mandatory training.",
+      "Designed secure workflows with <b>Supabase Auth + PostgreSQL</b>, streamlining certification tracking and ensuring compliance.",
+      "Optimized <b>Supabase Buckets</b> with signed URL access, reducing file latency by <b>40%</b>.",
+      "Performed <b>software testing</b> and applied debugging techniques, ensuring application reliability and quicker issue resolution.",
     ],
     imageLogo: EksaqLogo,
     techStack: [
@@ -94,8 +94,8 @@ const experiences = [
     duration: "May 2023 - Sept 2024",
     companyWebsite: "https://www.jediteck.com/",
     description: [
-      "Developed an AI-driven document analysis and retrieval system using FAISS(Facebook AI Similarity Search) for efficient similarity search.",
-      "Built and deployed a scalable React-based chat interface on AWS EC2 with Auto Scaling, utilizing S3 for file storage and DynamoDB for user chat management.",
+      "Developed an <b>AI-driven document analysis and retrieval system</b> using <b>FAISS</b> (Facebook AI Similarity Search) for efficient similarity search.",
+      "Built and deployed a scalable <b>React-based chat interface</b> on <b>AWS EC2 with Auto Scaling</b>, utilizing <b>S3</b> for file storage and <b>DynamoDB</b> for user chat management.",
     ],
     imageLogo: JediteckLogo,
     techStack: [
@@ -116,14 +116,14 @@ const HighlightedText = (text: string) => {
       return (
         <span
           key={index}
-          className="font-bold text-[14px] md:text-[16px] text-[#ffffff]"
+          className="font-bold text-[14px] md:text-[16px] text-neutral-900 dark:text-[#ffffff]"
         >
           {part.replace("<b>", "").replace("</b>", "")}
         </span>
       );
     }
     return (
-      <span key={index} className="text-[14px] md:text-[16px] text-[#ffffff]">
+      <span key={index} className="text-[14px] md:text-[16px] text-neutral-800 dark:text-[#ffffff]">
         {part}
       </span>
     );
@@ -135,10 +135,12 @@ const HighlightedText = (text: string) => {
 export default function Experience() {
   return (
     <>
-      <p id="Experience" className="text-2xl heading-primary font-bold">
-        Experience
-      </p>
-      <div className="w-[75px] h-[4px] rounded-full bg-[#64ffda]" />
+      <div className="inline-flex w-fit flex-col">
+        <p id="Experience" className="text-2xl heading-primary font-bold text-black dark:text-white">
+          Experience
+        </p>
+        <div className="w-full h-[4px] rounded-full bg-accent" />
+      </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2"></div>
         {experiences.map((individualExperience, index) => (
@@ -163,13 +165,13 @@ interface ExperienceProps {
 function ExperienceCard({ data }: { data: ExperienceProps }) {
   return (
     <div
-      className="rounded-3xl bg-gradient-to-br from-neutral-600 via-neutral-800 to-neutral-800 p-[1px] border-gray-800 experience-card cursor-pointer shadow-lg"
+      className="rounded-3xl bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-100 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800 p-[1px] border-gray-200 dark:border-gray-800 experience-card cursor-pointer transition-all duration-300"
       onClick={() => window.open(data.companyWebsite, "mywindow")}
     >
-      <div className="flex flex-col gap-4 w-full h-full bg-neutral-900/80 rounded-3xl p-4 md:p-6 shadow-lg">
+      <div className="flex flex-col gap-4 w-full h-full bg-white dark:bg-neutral-900/80 rounded-3xl p-4 md:p-6 shadow-sm transition-all duration-300">
         <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-[100%]">
           <div className="flex flex-row items-start justify-start md:items-center md:justify-center gap-4">
-            <div className="w-12 h-12 bg-white rounded-xl justify-start items-start">
+            <div className="w-12 h-12 bg-white rounded-xl justify-start items-start border border-neutral-200 dark:border-none">
               <Image
                 src={data.imageLogo}
                 alt="eksaq"
@@ -180,14 +182,14 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
             </div>
             <div>
               <div className="flex flex-col md:flex-row">
-                <p className="text-sm md:text-lg font-bold text-hover group-hover:text-[#64ffda]">
+                <p className="text-sm md:text-lg font-bold text-neutral-800 dark:text-white dark:group-hover:text-accent">
                   {data.role} &nbsp;
                 </p>
-                <div className="flex flex-row text-sm md:text-lg font-bold text-hover group-hover:text-[#64ffda]">
-                  <p className="hidden text-hover md:flex">|&nbsp;</p>{" "}
+                <div className="flex flex-row text-sm md:text-lg font-bold text-neutral-800 dark:text-white dark:group-hover:text-accent">
+                  <p className="hidden text-neutral-400 dark:text-hover md:flex">|&nbsp;</p>{" "}
                   {data.name}
                   <div
-                    className="hidden w-7 h-7 md:flex items-center justify-center transition-transform group-hover:translate-x-1 group-hover:translate-y-[-1px] skill-icon2"
+                    className="hidden w-7 h-7 md:flex items-center justify-center transition-transform group-hover:translate-x-1 group-hover:translate-y-[-1px] skill-icon2 text-neutral-800 dark:text-white"
                     onClick={() => window.open(data.companyWebsite, "mywindow")}
                   >
                     <div className="experience-icon w-5 h-5">
@@ -196,7 +198,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
                   </div>
                 </div>
               </div>
-              <p className="text-sm md:text-lg font-bold text-[#ffffff]">
+              <p className="text-sm md:text-lg font-bold text-neutral-600 dark:text-[#ffffff]">
                 {data.duration}
               </p>
             </div>
@@ -204,7 +206,7 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
         </div>
 
         <div>
-          <ul className={"list-disc list-inside md:mt-2"}>
+          <ul className={"list-disc list-inside md:mt-2 text-neutral-700 dark:text-neutral-300"}>
             {data.description.map((point, index) => (
               <li key={index} className="text-md">
                 {HighlightedText(point)}
@@ -224,8 +226,10 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
                     window.open(link.link, "mywindow");
                   }}
                 >
-                  <WebsiteLink />
-                  <p className="text-websitelink text-[#ffffff]">
+                  <div className="text-neutral-800 dark:text-white">
+                    <WebsiteLink />
+                  </div>
+                  <p className="text-websitelink text-neutral-800 dark:text-[#ffffff]">
                     {link.title}
                   </p>
                 </div>
@@ -235,9 +239,9 @@ function ExperienceCard({ data }: { data: ExperienceProps }) {
             {data.techStack.map((individualStack, index) => (
               <div
                 key={index}
-                className="rounded-full bg-gray-800 w-auto px-2 py-1"
+                className="rounded-full bg-[--accent-soft] dark:bg-gray-800 w-auto px-2 py-1 transition-colors duration-300"
               >
-                <p className="font-bold text-teal-300">{individualStack}</p>
+                <p className="font-bold text-accent">{individualStack}</p>
               </div>
             ))}
           </div>
