@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import GoogleLogo from "../../assets/googleLogo.png";
 import EksaqLogo from "../../assets/eksaqLogo.png";
 import JediteckLogo from "../../assets/jediteckLogo.png";
 import ArrowIcon from "../icons/arrowIcon";
@@ -7,28 +8,49 @@ import AimlclubSjsu from "../../assets/aimlclubsjsu.png";
 
 const experiences = [
   {
+    name: "Google",
+    role: "Software Engineering Intern",
+    duration: "May 2026 - Aug 2026",
+    companyWebsite: "https://about.google/",
+    description: [
+      "Engineered a <b>diagnostic Calling Configuration Assistant</b> that detects and resolves browser permission issues affecting <b>20%+ of incoming web calls</b>.",
+      "Built reactive <b>Angular 17+ UI components</b> enabling 1-click automated fixes, replacing low-engagement legacy troubleshooting banners.",
+      "Expanded automated test coverage with executable and unit suites, extending <b>3 reusable fake services</b> to validate cross-browser behavior across Chrome, Edge, and Safari.",
+      "Resolved cross-browser drag-and-drop inconsistencies, improving reliability across all supported browsers.",
+    ],
+    imageLogo: GoogleLogo,
+    techStack: [
+      "Angular 17+",
+      "TypeScript",
+      "Unit Testing",
+      "Cross-Browser QA",
+      "WebRTC",
+    ],
+    deployedLinks: [],
+  },
+  {
     name: "EKSAQ",
     role: "Associate Software Engineer",
     duration: "Jun 2024 - Jan 2025",
     companyWebsite: "https://eksaq.in",
     description: [
-      "Developed a cross-platform <b>React/React Native</b> learning platform that scaled to <b>10,000+ monthly active students</b>, resolving performance bottlenecks to ensure reliable access across devices.",
-      "Integrated <b>Azure Speech Services</b> on <b>AWS EC2</b> for real-time pronunciation scoring, boosting engagement by <b>2.4x</b>.",
-      "Containerized backend on <b>AWS ECS</b> and redesigned into <b>microservices</b>, cutting LMS load time by <b>50%+</b> and enabling smoother student workflows.",
-      "Migrated from <b>WordPress/Moodle</b> to <b>AWS ECS + Amplify</b>, reducing infrastructure expenses by <b>30%</b> while improving scalability and reliability.",
-      "Contributed to <b>system architecture design</b> and authored detailed <b>technical & API documentation</b> for scalable deployment, accelerating engineer onboarding and enhancing collaboration.",
+      "Built scalable <b>RESTful microservices</b> powering a School & Learning Management System serving <b>30,000+ users</b> while co-leading backend development across an 8-member team.",
+      "Developed an <b>event-driven onboarding engine</b> to asynchronously import 500+ students/teachers per school with real-time job tracking — eliminating request timeouts.",
+      "Built a <b>RabbitMQ messaging pipeline</b> processing <b>120,000+ audio evaluations/month</b> with zero message loss.",
+      "Integrated <b>Azure Speech Services</b> for real-time pronunciation scoring, increasing student engagement by <b>2.4x</b>.",
+      "Implemented a distributed <b>idempotency mechanism</b> using Redis to eliminate duplicate request processing on retries.",
     ],
     imageLogo: EksaqLogo,
     techStack: [
+      "Node.js",
+      "RabbitMQ",
+      "Redis",
+      "REST APIs",
+      "PostgreSQL",
+      "AWS",
+      "Azure Speech",
       "React Native",
-      "React",
       "Express",
-      "Postgresql",
-      "AWS ECS",
-      "Typescript",
-      "Redux",
-      "Tailwind CSS",
-      "Supabase",
     ],
     deployedLinks: [
       {
@@ -90,7 +112,7 @@ const experiences = [
   },
   {
     name: "Jediteck",
-    role: "AI Software Engineer Intern ",
+    role: "AI Software Engineer Intern",
     duration: "May 2023 - Sept 2024",
     companyWebsite: "https://www.jediteck.com/",
     description: [

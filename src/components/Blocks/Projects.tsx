@@ -3,31 +3,26 @@
 import Image, { StaticImageData } from "next/image";
 import Clipcraft from "../../assets/clipcraft.png";
 import Packcheck from "../../assets/packcheck.png";
-import Starbucks from "../../assets/starbucks.png";
 import VideoTranscoder from "../../assets/videoTranscoder.png";
 import YoutubenotesX from "../../assets/youtubenotesx.png";
 import WebsiteLink from "../icons/websiteLink";
 import LaserEyes from "../../assets/lasereyes.png";
-import DepthAi from "../../assets/depthai.png";
-import AirpodsPro from "../../assets/airpodspro.png";
-import DaysofML from "../../assets/100daysofML.png";
 import RAFTSLMRAG from "../../assets/RAFTSLMRAG.png";
-import { useState } from "react";
 export const projects: ProjectProps[] = [
   {
     name: "ClipCraft",
     description: [
-      "AI-powered tool that creates 2D math/physics visualizations from text prompts using Manim.",
+      "AI-powered platform that turns natural-language prompts into <b>Manim animation videos</b> via a scalable async rendering pipeline (<b>Redis job queues + SSE</b>), secured with JWT, OAuth, rate limiting, and Cloudflare Turnstile.",
     ],
     techStack: [
       "React",
       "TypeScript",
       "Node.js",
       "Docker",
-      "Postgres",
-      "Supabase",
       "Redis",
-      "Tailwind CSS",
+      "SSE",
+      "Supabase",
+      "JWT/OAuth",
       "Prompt Engineering",
     ],
     deployedLinks: [
@@ -83,42 +78,6 @@ export const projects: ProjectProps[] = [
     category: "ML & DL",
   },
   {
-    name: "DephtAI",
-    description: ["Web app to put text behind the main object in image"],
-    techStack: ["React", "TypeScript", "Tailwind CSS"],
-    deployedLinks: [
-      {
-        title: "Website",
-        link: "https://depth-ai-eta.vercel.app/",
-      },
-      {
-        title: "GitHub",
-        link: "https://github.com/Rishith-S/depth.ai",
-      },
-    ],
-    image: DepthAi,
-    category: "Frontend",
-  },
-  {
-    name: "AirpodsPro - Frontend",
-    description: [
-      "Responsive AirPods Pro clone built with React, TypeScript, Tailwind, and Framer Motion.",
-    ],
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    deployedLinks: [
-      {
-        title: "Website",
-        link: "https://airpodspro.pages.dev/",
-      },
-      {
-        title: "GitHub",
-        link: "https://github.com/Rishith-S/airpodspro",
-      },
-    ],
-    image: AirpodsPro,
-    category: "Frontend",
-  },
-  {
     name: "PackCheck",
     description: [
       "Scan food barcodes and get allergen alerts based on your profile.",
@@ -145,23 +104,6 @@ export const projects: ProjectProps[] = [
     ],
     image: Packcheck,
     category: "Full Stack",
-  },
-  {
-    name: "100DaysofML",
-    description: ["Notes for 100DaysofML playlist"],
-    techStack: ["docusaurus", "typescript"],
-    deployedLinks: [
-      {
-        title: "Website",
-        link: "https://rishith-s.github.io/100daysofML/",
-      },
-      {
-        title: "GitHub",
-        link: "https://github.com/Rishith-S/100daysofML",
-      },
-    ],
-    image: DaysofML,
-    category: "ML & DL",
   },
   {
     name: "Laser Eyes",
@@ -212,25 +154,6 @@ export const projects: ProjectProps[] = [
     image: VideoTranscoder,
     category: "Full Stack",
   },
-  {
-    name: "Starbucks - Frontend",
-    description: [
-      "Responsive Starbucks clone built with React, TypeScript, Tailwind, and Framer Motion.",
-    ],
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    deployedLinks: [
-      {
-        title: "Website",
-        link: "https://starbucks-fe.pages.dev",
-      },
-      {
-        title: "GitHub",
-        link: "https://github.com/Rishith-S/starbucks",
-      },
-    ],
-    image: Starbucks,
-    category: "Frontend",
-  },
 ];
 
 export const HighlightedText = (text: string) => {
@@ -253,16 +176,6 @@ export const HighlightedText = (text: string) => {
 };
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const categories = ["All", "Full Stack", "Frontend", "ML & DL"];
-
-  const filteredProjects = projects.filter(
-    (project) =>
-      selectedCategory === "All" ||
-      project.category === selectedCategory,
-  );
-
   return (
     <>
       <div className="inline-flex w-fit flex-col">
@@ -272,15 +185,8 @@ export default function Projects() {
         <div className="w-full h-[4px] rounded-full bg-accent" />
       </div>
       <div className="project-card mt-4 flex flex-col gap-4">
-        <ProjectTopBar
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          isDropdownOpen={isDropdownOpen}
-          setIsDropdownOpen={setIsDropdownOpen}
-          categories={categories}
-        />
         <div className="flex flex-col gap-6 w-full">
-          {filteredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <ProjectCard
               key={`index-${index}`}
               data={project}
@@ -361,87 +267,5 @@ function ProjectCard({
         </div>
       </div>
     </div>
-  );
-}
-
-function ProjectTopBar({
-  selectedCategory,
-  setSelectedCategory,
-  isDropdownOpen,
-  setIsDropdownOpen,
-  categories,
-}: {
-  selectedCategory: string;
-  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
-  isDropdownOpen: boolean;
-  setIsDropdownOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  categories: string[];
-}) {
-  return (
-    <>
-      <div className="hidden lg:flex flex-col p-[1px] rounded-lg bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-200 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800">
-        <div className="flex flex-row gap-4 p-4 bg-white dark:bg-neutral-900/90 rounded-lg">
-          {categories.map((category) => (
-            <p
-              key={category}
-              className={`text-sm xl:text-base font-bold cursor-pointer transition-colors duration-200 ${selectedCategory === category ? "text-accent" : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"}`}
-              onClick={() => setSelectedCategory(category)}
-            >
-              {category}
-            </p>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile Dropdown */}
-      <div className="relative lg:hidden">
-        <div
-          className={`flex flex-col p-[1px] rounded-lg bg-gradient-to-br ${isDropdownOpen ? "from-accent via-accent to-neutral-200 dark:to-neutral-800" : "from-neutral-200 via-neutral-100 to-neutral-200 dark:from-neutral-600 dark:via-neutral-800 dark:to-neutral-800"}`}
-        >
-          <div
-            className="flex flex-row items-center justify-between p-4 bg-white dark:bg-neutral-900 rounded-lg cursor-pointer"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-          >
-            <span className="text-sm sm:text-base font-bold text-accent">
-              {selectedCategory}
-            </span>
-            <svg
-              className={`w-5 h-5 text-neutral-800 dark:text-white transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </div>
-
-          {isDropdownOpen && (
-            <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-neutral-900 rounded-lg border border-neutral-200 dark:border-neutral-700 z-10 shadow-lg">
-              {categories.map((category, index) => (
-                <div
-                  key={category}
-                  className={`p-3 cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-150 ${
-                    selectedCategory === category
-                        ? "bg-neutral-100 dark:bg-neutral-800 text-accent"
-                      : "text-neutral-800 dark:text-white"
-                  } ${index === 0 ? "rounded-t-lg" : ""} ${index === categories.length - 1 ? "rounded-b-lg" : ""}`}
-                  onClick={() => {
-                    setSelectedCategory(category);
-                    setIsDropdownOpen(false);
-                  }}
-                >
-                  <span className="text-sm sm:text-base font-medium">{category}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-    </>
   );
 }

@@ -40,7 +40,7 @@ const SideCard = () => {
                 </h1>
 
                 <p className="text-gray-600 dark:text-gray-300 font-medium text-center text-sm lg:text-base max-w-[280px] leading-relaxed mb-4">
-                    Software Developer
+                    Software Engineer · MS AI @ SJSU
                 </p>
 
                 <a
